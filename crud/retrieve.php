@@ -8,7 +8,7 @@ if($result ->num_rows > 0) {
         echo "id:" . $row["id"] . "First Name:". $row["fname"]."Last Name:". $row["lname"] 
         
         ."City:". $row["city"]. "Group ID:". $row["groupid"]
-        ."<br>";
+        ."Create Date:". $row["createtime"]."<br>";
     }
 }
 // You can type different sql queries based on your needs

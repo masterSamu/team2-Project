@@ -19,23 +19,28 @@ Last Name :<br>
 <input type="text" name="lname" value="<?php echo $row['lname']; ?>">
 <br>
 City:<br>
-<input type="text" name="city" value="<?php echo $row['city']; ?>">
-<br>
-Group ID:<br>
-<select name="groupid"> 
-    <option value="BBCAP19"> BBCAP19 </option>
-    <option value="BBCAP20"> BBCAP20 </option>
-    <option value="Others"> Others </option>
-</select>
-<br>
+<form>
+    <input type="text" name="city" value="<?php echo $row['city']; ?>">
+    <br>
+    Group ID:<br>
+    <select name="groupid"> 
+        <option value="BBCAP19"> BBCAP19 </option>
+        <option value="BBCAP20"> BBCAP20 </option>
+        <option value="Others"> Others </option>
+    </select>
+    <br>
 
-<input type="submit" name="submit" value="Submit" >
+    <input type="submit" name="submit" value="Submit" >
 </form>
 <?php 
 if($_POST['submit']){
     
     $fname = $_POST['fname'];
-    $query = mysqli_query($conn,"UPDATE studentsinfo set fname='$fname' where id='$a'");
+    $lname = $_POST['lname'];
+    $city = $_POST['city'];
+    $groupid = $_POST['groupid'];
+
+    $query = mysqli_query($conn,"UPDATE studentsinfo set fname='$fname', lname='$lname', city='$city', groupid='$groupid' where id='$a'");
     if($query){
         echo "Record Modified Successfully <br>";
         echo "<a href='update.php'> Check your updated List </a>";
