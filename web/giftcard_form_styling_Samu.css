@@ -1,0 +1,55 @@
+/* Author: Samu Uunonen */
+
+/* Page content */
+
+h1 {
+    background-color: #C2B9B0;
+    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    max-height: 150px;
+    text-align: center;
+}
+
+/* main */
+.first_section {
+    background-color: #C2B9B0;
+    margin-bottom: 2%;
+    padding: 2%;
+}
+
+article {
+    text-align: left;
+    padding: 2%;
+    padding-bottom: 0;
+}
+
+form {
+    padding: 2%;
+    padding-top: 0%;
+}
+
+label {
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+}
+
+input {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+aside {
+    padding: 2%;
+    align-content: center;
+}
+
+.submit-button {
+    padding-left: 2%;
+}
+
+#submit {
+    padding: 2%;
+}
+
+

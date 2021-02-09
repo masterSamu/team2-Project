@@ -1,0 +1,69 @@
+
+body{
+    background-color: #C2CAD0;
+    font-family: 'Poppins','Times New Roman', Times, serif;
+}
+
+
+/* Navigation bar */
+
+nav {   
+    background-color:  #7E655A;
+    z-index: 2;
+}
+
+.mynav{
+    background-color: #7E655A;
+}
+
+.navbar{
+    background-color: transparent !important;
+}
+
+.nav-link{
+    color: #ffffff !important;
+}
+.nav-link:hover{
+    color:#afd275 !important;   
+}
+.navbar-brand img{      
+    height : 80px ;
+    width : auto;
+}
+
+/* Buttons */
+
+.btn-outline-success {
+    background-color: #E7717D;
+    color: #ffffff;
+    border-color: #E7717D;
+}
+.btn-outline-success:hover{
+    background-color: #ffffff;
+    color: #E7717D;
+    border-color: #E7717D;
+}
+
+.btn-primary{
+    background-color: #E7717D;
+    border-color:#E7717D;
+    color: #ffffff;
+}
+.btn-primary:hover{
+    background-color: #ffffff;
+    border-color:#E7717D;
+    color: #E7717D;
+}
+
+
+/* Footer */
+
+footer {
+    padding-left: 4%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #7E655A;
+    color: #C4C4C4;
+    text-align: left;
+    left: 0;
+}

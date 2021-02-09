@@ -1,0 +1,24 @@
+/* Author: Samu Uunonen */
+
+/* Page content */
+
+h1 {
+    background-color: #C2B9B0;
+    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    max-height: 150px;
+    text-align: center;
+}
+
+/* main */
+.first_section {
+    background-color: #C2B9B0;
+    margin-bottom: 2%;
+    padding: 2%;
+}
+
+article {
+    text-align: left;
+    padding: 2%;
+}
