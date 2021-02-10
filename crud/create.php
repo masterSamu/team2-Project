@@ -9,7 +9,6 @@ if(empty($fname) || empty($lname) || empty($city)){
     $formlink ="form.php";
     echo "<br><a href='$formlink'>Back to Form Page</a>";
 
-    }
 else{
 
     $sql="insert into studentsinfo (fname, lname, city, groupid)
