@@ -1,4 +1,5 @@
 <?php
+
     $servername="localhost:3307";
     $username="testuser";
     $password="password";

@@ -44,6 +44,7 @@
                 <td><?php echo $row["lname"]; ?></td>
                 <td><?php echo $row["city"]; ?></td>
                 <td><?php echo $row["groupid"]; ?></td>
+                <td><?php echo $row["timestamp"]; ?></td>
                 <td><a href="updatesingle.php?id=<?php echo $row['id']; ?>">Update</a></td>
                 <td><a href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
             </tr>
