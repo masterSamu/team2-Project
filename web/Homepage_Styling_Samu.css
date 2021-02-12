@@ -1,13 +1,5 @@
 
-/* Author: Samu Uunonen */
-
-
 /* Page content */
-
-.carousel {
-    margin-left: 0;
-    margin-right: 0;
-}
 
 h1 {
     background-color: #C2B9B0;
@@ -20,7 +12,7 @@ h1 {
 
 
 /* main */
-.first_section, .second_section {
+.content {
     background-color: #C2B9B0;
     margin-bottom: 2%;
     padding: 2%;
@@ -29,14 +21,17 @@ h1 {
 article {
     text-align: left;
     padding: 2%;
-    max-width: 700px;
 }
 
 h2 {
     padding-bottom: 2%;
 }
 
-.second_section li {
+h3 {
+    padding-bottom: 2%
+}
+
+.content li {
     padding-top: 1%;
     padding-bottom: 1%;
 }
@@ -48,8 +43,9 @@ aside {
 
 
 
+
 /* Hero image */
-.hero-image {
+#homepage-hero-image {
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(images/giftcard.jpg);
     background-position: center;
@@ -81,3 +77,46 @@ aside {
     border-color: #E7717D;
 }
 
+/*
+    Meeting room
+*/
+
+.flex-property-usage{
+    display: flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.menu-describtion{
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto; 
+    font-style: italic;  
+}
+
+#meeting-page-carousel {
+    margin: 0 auto;
+    max-width: 1366px;
+    max-height: 487px;
+    background-image: url(images/customer-review.jpg);
+}
+
+#meeting-page-carousel .carousel-item {
+    background-color: black;
+    opacity: 0.6;
+}
+
+#meeting-page-carousel article {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    padding: 10%;
+}
+
+
+/*
+    Contact Page
+*/
