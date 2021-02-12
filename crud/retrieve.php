@@ -1,4 +1,5 @@
 <?php
+
     include 'db.php'; 
     $sql = "select * from studentsinfo";
     $result = $conn->query($sql);

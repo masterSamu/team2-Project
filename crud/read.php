@@ -1,4 +1,5 @@
 <?php
+
     include 'db.php'; 
     $sql = "select * from studentsinfo WHERE (fname != '' AND lname != '' AND city != '' AND groupid != '')";
     $result = $conn->query($sql);
