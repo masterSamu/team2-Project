@@ -1,6 +1,26 @@
+<!doctype html>
+<html lang="en">
 
-<!-- Include header from header.php file -->
-<?php include 'header.php'; ?>
+  <head>
+
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Hotel, Room, Restaurant, Hämeenlinna">
+      <meta name="description" content="Hotel in Hämeenlinna">
+      <meta name="author" content="team2">
+
+      <!-- Styling files -->
+      <?php include 'styling-links.php'; ?>
+
+
+      <title>Hame Hotel - Homepage</title>
+
+  </head>
+
+
+<!-- Include navigation bar from navbar.php file -->
+<?php include 'navbar.php'; ?>
 
 
 <!-- Home Page content -->
@@ -56,7 +76,7 @@
                                 <p>
                                   Hame Hotel Hämeenlinna offers an all-new-hotel experience. The hotel is located in the heart of Hämeenlinna next to the HAMK campus. Opened in the autumn of 2015, the hotel pays homage to the eventful history and various legends of the city of Hämeenlinna. The modern hotel combined with the old locomotive depots provide the best possible environment to experience the enticing story of Hämeenlinna and its phenomena, from local rock icons to sports heroes. The hotel’s congress centre offers a unique setting for successful events and meetings.<br> The hotel’s restaurant and first-class breakfast provide delicious experiences for hotel guests and citizens of Hämeenlinna. Bar of the hotel have already become popular meeting place over Hämeenlinna and the world.
                                 </p>
-                                <a href="restaurant_samu.html" class="btn btn-primary">Read more >></a>
+                                <a href="rooms.php" class="btn btn-primary">Book Room >></a>
                             </article>
                         </div>
                         <!-- Right side image 1 -->
@@ -83,7 +103,7 @@
                                 <p>
                                     <b>All from only 199€ per couple</b>
                                 </p>
-                                <a href="rooms_hossein.html" class="btn btn-primary">Read more >></a>
+                                <a href="restaurant.php" class="btn btn-primary">Read more >></a>
                             </article>
                         </div>
                         <!-- Right side image 2 -->
