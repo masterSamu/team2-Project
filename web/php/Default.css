@@ -47,15 +47,16 @@ nav {
     border-color: #E7717D;
 }
 
-.btn-primary{
+.btn-primary, .btn-primary:active, .btn-primary:checked, .btn-primary:focus, .btn-primary:visited, .btn-primary::after{
     background-color: #E7717D;
     border-color:#E7717D;
     color: #ffffff;
+    box-shadow: none !important;
 }
 .btn-primary:hover{
-    background-color: #ffffff;
-    border-color:#E7717D;
-    color: #E7717D;
+    background-color: #ffffff !important;
+    border-color:#E7717D !important;
+    color: #E7717D !important;
 }
 
 
@@ -105,7 +106,8 @@ aside {
 
 
 
-/* Hero image */
+/* Homepage bottom Hero image */
+
 #homepage-hero-image {
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(images/giftcard.jpg);
@@ -127,16 +129,15 @@ aside {
 }
 
 .hero-text button {
-    background-color: #E7717D;
-    color: #ffffff;
-    border-color: #E7717D;
+    font-size: 1.5rem;
 }
 
-.hero-text button:hover {
-    background-color: #ffffff;
-    color: #E7717D;
-    border-color: #E7717D;
+.hero-text p {
+    font-size: 1rem;
+    color: black;
 }
+
+
 
 /*
     Meeting room
