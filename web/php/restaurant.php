@@ -1,12 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Hotel, Restaurant, Hämeenlinna">
+      <meta name="description" content="Hotel restaurant in Hämeenlinna">
+      <meta name="author" content="team2">
+
+      <!-- Styling files -->
+      <?php include 'styling-links.php'; ?>
+
+      
+      <title>Hame Hotel - Restaurant</title>
+
+  </head>
+
 
 <!-- Include header from header.php file -->
-<?php include 'header.php'; ?>
+<?php include 'navbar.php'; ?>
 
 
 <!-- Restaurant page content -->
 
- <!-- Header -->
- <div class="row">
+          <!-- Heading -->
+          <div class="row">
               <div class="col-md-12">
                 <h1>Hame Hotel Restaurant</h1>
               </div>
