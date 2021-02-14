@@ -36,13 +36,13 @@
                         </ol>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="images/Hame_Hotel.jpg" class="d-block w-100" alt="...">
+                            <img src="images/Hame_Hotel.jpg" class="d-block w-100" alt="Image of Hame Hotel" max-width="1351" max-height="760">
                           </div>
                           <div class="carousel-item">
-                            <img src="images/hame_hotel_view.jpg" class="d-block w-100" alt="...">
+                            <img src="images/hame_hotel_view.jpg" class="d-block w-100" alt="Image of view from Hame Hotel" max-width="1351" max-height="760">
                           </div>
                           <div class="carousel-item">
-                            <img src="images/Hame_Hotel_Conference.jpg" class="d-block w-100" alt="...">
+                            <img src="images/Hame_Hotel_Conference.jpg" class="d-block w-100" alt="Image of business meeting in Hame Hotel" max-width="1351" max-height="760">
                           </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
@@ -120,7 +120,13 @@
                     <div class="col-md-12">
                         <div class="hero-image" id="homepage-hero-image">
                             <div class="hero-text">
-                                <a href="giftcard_form_samu.html" class="btn btn-primary"><h3>Subscribe newsletter</h3></a>
+                              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubscribeNewsletterHome">Subscribe newsletter</button>
+                                <div class="collapse" id="collapseSubscribeNewsletterHome">
+                                  <div class="card card-body">
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubscribeNewsletterHome">Close</button>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
