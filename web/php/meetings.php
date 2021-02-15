@@ -22,6 +22,8 @@
 <!-- Include navigation bar from navbar.php file -->
 <?php include 'navbar.php'; ?>
 
+<!-- Page content -->
+
     <!-- Header -->
     <div class="row">
         <div class="col-md-12">
