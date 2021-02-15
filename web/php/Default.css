@@ -1,4 +1,66 @@
 
+body{
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #C2CAD0;
+    font-family: 'Poppins','Times New Roman', Times, serif;
+}
+
+
+
+/* Navigation bar */
+
+nav {   
+    background-color:  #7E655A;
+    z-index: 2;
+}
+
+.mynav{
+    background-color: #7E655A;
+}
+
+.navbar{
+    background-color: transparent !important;
+}
+
+.nav-link{
+    color: #ffffff !important;
+}
+.nav-link:hover{
+    color:#afd275 !important;   
+}
+.navbar-brand img{      
+    height : 80px ;
+    width : auto;
+}
+
+/* Buttons */
+
+.btn-outline-success {
+    background-color: #E7717D;
+    color: #ffffff;
+    border-color: #E7717D;
+}
+.btn-outline-success:hover{
+    background-color: #ffffff;
+    color: #E7717D;
+    border-color: #E7717D;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:checked, .btn-primary:focus, .btn-primary:visited, .btn-primary::after{
+    background-color: #E7717D;
+    border-color:#E7717D;
+    color: #ffffff;
+    box-shadow: none !important;
+}
+.btn-primary:hover{
+    background-color: #ffffff !important;
+    border-color:#E7717D !important;
+    color: #E7717D !important;
+}
+
+
+
 /* Page content */
 
 h1 {
@@ -44,7 +106,8 @@ aside {
 
 
 
-/* Hero image */
+/* Homepage bottom Hero image */
+
 #homepage-hero-image {
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(images/giftcard.jpg);
@@ -66,16 +129,15 @@ aside {
 }
 
 .hero-text button {
-    background-color: #E7717D;
-    color: #ffffff;
-    border-color: #E7717D;
+    font-size: 1.5rem;
 }
 
-.hero-text button:hover {
-    background-color: #ffffff;
-    color: #E7717D;
-    border-color: #E7717D;
+.hero-text p {
+    font-size: 1rem;
+    color: black;
 }
+
+
 
 /*
     Meeting room
@@ -117,6 +179,14 @@ aside {
 }
 
 
-/*
-    Contact Page
-*/
+/* Footer */
+
+footer {
+    padding-left: 4%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #7E655A;
+    color: #C4C4C4;
+    text-align: left;
+    left: 0;
+}

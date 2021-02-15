@@ -1,67 +1,37 @@
 <!doctype html>
 <html lang="en">
+
   <head>
-    <!--fonts-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="Homepage_Styling_Samu.css" rel="stylesheet">
-    <link href="Default.css" rel="stylesheet">
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Hotel parking, Hämeenlinna">
+      <meta name="description" content="Hotel parking in Hämeenlinna">
+      <meta name="author" content="team2">
 
-    <title>Hame Hotel - Meeting rooms</title>
+      <!-- Styling files -->
+      <?php include 'styling-links.php'; ?>
+
+      
+      <title>Hame Hotel - Meetings</title>
+
   </head>
-<body>
-  <div class="container-fluid">
-    
-    <header>
-      <!-- Navigation bar -->
-      <div class="mynav">  <!-- Start of navbar-->        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-          <div class="container">
-            <div class="hame-logo"><a class="navbar-brand" href="home_samu.html"><img src="images/Hame_Hotel_logo.png" alt="Hame hotel logo" ></a></div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="rooms_hossein.html">ROOMS</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="restaurant_samu.html">RESTAURANT</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="parking_samu.html">PARKING</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="meeting_hossein.html">MEETINGS</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="contact_hossein.html">CONTACT</a>
-                </li>
-              </ul>
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
-          </div>
-        </nav> 
-      </div> <!-- end of navbar-->
-    </header>
 
+
+<!-- Include navigation bar from navbar.php file -->
+<?php include 'navbar.php'; ?>
+
+<!-- Page content -->
+
+    <!-- Header -->
     <div class="row">
-      <div class="col-md-12">
-        <h1>Meeting rooms & facilities</h1>
-      </div>
+        <div class="col-md-12">
+            <h1>World class business meetings at Hame Hotel</h1>
+        </div>
     </div>
 
-  <main>
+<main>
 
     <div class="content">
       <div class="row">
@@ -201,21 +171,7 @@
   </main>
 
 
+  <!-- Footer from footer.php file -->
+ <?php include 'footer.php'; ?>
 
-        <div class="row">
-            <div class="col-md-12">
-                <footer>
-                    <address>
-                        Phone number: +358401234567<br>
-                        Address: 28 Visamäentie, Hämeenlinna,<br>
-                        Country: Finland
-                    </address>
-                </footer>
-            </div>  
-        </div> 
-      </div> <!--end of container-->
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    </body>
-
-</html>
