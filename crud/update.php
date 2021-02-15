@@ -29,6 +29,7 @@
                 <th>Last Name</th>
                 <th>City</th>
                 <th>Group ID</th> 
+                <th>Time stamp</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>

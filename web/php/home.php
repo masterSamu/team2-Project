@@ -1,69 +1,32 @@
 <!doctype html>
 <html lang="en">
 
-    <!-- Author: Samu Uunonen -->
+  <head>
 
-    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Hotel, Room, Restaurant, Hämeenlinna">
+      <meta name="description" content="Hotel in Hämeenlinna">
+      <meta name="author" content="team2">
 
-        <!--fonts-->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">    
-
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="Hotel, Room, Restaurant, Hämeenlinna">
-        <meta name="description" content="Hotel in Hämeenlinna">
-        <meta name="author" content="">
-
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-        <link href="Default.css" rel="stylesheet">
-
-        <title>Hame Hotel - Homepage</title>
-    </head>
-    <body>
-        <div class="container-fluid">
-
-             <!-- Navigation bar -->
-             <div class="mynav">  <!-- Start of navbar-->        
-                <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-                    <div class="container">
-                      <a class="navbar-brand" href="home_samu.html"><logo class="hame-logo"><img   src="images/Hame_Hotel_logo.png" alt="Hame hotel logo" height=80px width="auto"></logo></a>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="rooms_hossein.html">ROOMS</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="restaurant_samu.html">RESTAURANT</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link active" href="parking_samu.html">PARKING</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link active" href="meeting_hossein.html">MEETINGS</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link active" href="contact_hossein.html">CONTACT</a>
-                          </li>
-                        </ul>
-                        <form class="d-flex">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                      </div>
-                    </div>
-                  </nav> 
-                </div> <!-- end of navbar-->
+      <!-- Styling files -->
+      <?php include 'styling-links.php'; ?>
 
 
-            <!-- Top Image Carousel -->
-            <div class="row">
+      <title>Hame Hotel - Homepage</title>
+
+  </head>
+
+
+<!-- Include navigation bar from navbar.php file -->
+<?php include 'navbar.php'; ?>
+
+
+<!-- Home Page content -->
+
+<!-- Top Image Carousel -->
+<div class="row">
                 <div class="col-md-12">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <ol class="carousel-indicators">
@@ -73,13 +36,13 @@
                         </ol>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="images/Hame_Hotel.jpg" class="d-block w-100" alt="...">
+                            <img src="images/Hame_Hotel.jpg" class="d-block w-100" alt="Image of Hame Hotel" max-width="1351" max-height="760">
                           </div>
                           <div class="carousel-item">
-                            <img src="images/hame_hotel_view.jpg" class="d-block w-100" alt="...">
+                            <img src="images/hame_hotel_view.jpg" class="d-block w-100" alt="Image of view from Hame Hotel" max-width="1351" max-height="760">
                           </div>
                           <div class="carousel-item">
-                            <img src="images/Hame_Hotel_Conference.jpg" class="d-block w-100" alt="...">
+                            <img src="images/Hame_Hotel_Conference.jpg" class="d-block w-100" alt="Image of business meeting in Hame Hotel" max-width="1351" max-height="760">
                           </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
@@ -102,7 +65,6 @@
                 </div>
             </div>
 
-
             <!-- Page Content-->
             <main>
                 <div class="content">
@@ -114,7 +76,7 @@
                                 <p>
                                   Hame Hotel Hämeenlinna offers an all-new-hotel experience. The hotel is located in the heart of Hämeenlinna next to the HAMK campus. Opened in the autumn of 2015, the hotel pays homage to the eventful history and various legends of the city of Hämeenlinna. The modern hotel combined with the old locomotive depots provide the best possible environment to experience the enticing story of Hämeenlinna and its phenomena, from local rock icons to sports heroes. The hotel’s congress centre offers a unique setting for successful events and meetings.<br> The hotel’s restaurant and first-class breakfast provide delicious experiences for hotel guests and citizens of Hämeenlinna. Bar of the hotel have already become popular meeting place over Hämeenlinna and the world.
                                 </p>
-                                <a href="restaurant_samu.html" class="btn btn-primary">Read more >></a>
+                                <a href="rooms.php" class="btn btn-primary">Book Room >></a>
                             </article>
                         </div>
                         <!-- Right side image 1 -->
@@ -141,7 +103,7 @@
                                 <p>
                                     <b>All from only 199€ per couple</b>
                                 </p>
-                                <a href="rooms_hossein.html" class="btn btn-primary">Read more >></a>
+                                <a href="restaurant.php" class="btn btn-primary">Read more >></a>
                             </article>
                         </div>
                         <!-- Right side image 2 -->
@@ -158,32 +120,20 @@
                     <div class="col-md-12">
                         <div class="hero-image" id="homepage-hero-image">
                             <div class="hero-text">
-                                <a href="giftcard_form_samu.html" class="btn btn-primary"><h3>Subscribe newsletter</h3></a>
+                              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubscribeNewsletterHome">Subscribe newsletter</button>
+                                <div class="collapse" id="collapseSubscribeNewsletterHome">
+                                  <div class="card card-body">
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubscribeNewsletterHome">Close</button>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-            </main>
-            
-            <!-- Footer -->
-            <div class="row">
-                <div class="col-md-12">
-                    <footer>
-                        <address>
-                            Phone number: +358401234567<br>
-                            Address: 28 Visamäentie, Hämeenlinna,<br>
-                            Country: Finland
-                        </address>
-                    </footer>
-                </div>
-            </div>
-
-        </div> <!-- End of container-fluid -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
-    </body>
-</html>
+
+<!-- Include footer from footer.php file -->
+<?php include 'Footer.php'; ?>
