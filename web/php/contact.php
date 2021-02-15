@@ -23,7 +23,7 @@
 <?php include 'navbar.php'; ?>
 
 
-
+<!-- Page content -->
 
 <main>
         <div class="row">
