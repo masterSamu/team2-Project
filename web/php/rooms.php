@@ -41,8 +41,8 @@
               
                 <div class="card h-100 mx-1 my-1" style="width: 20rem;">
                   <img src="images/01 - classic single room - hame hotel.GIF" class="card-img-top" alt="Classic Single room image" height=200px>
-                  <div class="card-body">
-                    <h5 class="card-title">1 persons - 11m2</h5>
+                  <div id="small-card-body" class="card-body">
+                    <h5 id="small-card-title" class="card-title">1 persons - 11m2</h5>
                     <p><br></p>
                     <h4 class="card-text">Classic Single</h4>
                     <p>Small single room suitable for one person</p>
@@ -59,8 +59,8 @@
               
                 <div class="card h-100 mx-1 my-1" style="width: 20rem;">
                   <img src="images/02 - standard twins - hame hotel.GIF" class="card-img-top" alt="Standard twins room with two seprated bed" height=200px>
-                  <div class="card-body">
-                    <h5 class="card-title">2 persons - 14m2</h5>
+                  <div id="small-card-body" class="card-body">
+                    <h5 id="small-card-title" class="card-title">2 persons - 14m2</h5>
                     <p><br></p>
                     <h4 class="card-text">Standard Twins</h4>
                     <p>Standard twins room with two seprated bed</p>
@@ -77,8 +77,8 @@
               
                 <div class="card h-100 mx-1 my-1" style="width: 20rem;">
                   <img src="images/03 - standard double - hame hotel.GIF" class="card-img-top" alt="Standard double room for one or two person" height=200px>
-                  <div class="card-body">
-                    <h5 class="card-title">2 persons - 14m2</h5>
+                  <div id="small-card-body" class="card-body">
+                    <h5 id="small-card-title" class="card-title">2 persons - 14m2</h5>
                     <p><br></p>
                     <h4 class="card-text">Standard double</h4>
                     <p>Standard double room for one or two person</p>
