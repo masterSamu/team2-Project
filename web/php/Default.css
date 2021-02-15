@@ -59,6 +59,42 @@ nav {
     color: #E7717D !important;
 }
 
+/* buttons - collapse part*/
+.accordion__button{
+    background-color: #E7717D;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+    padding: 15px;
+    transition: backgroung 0.2s;
+}
+.accordion__button::after{
+    content: '\25be';
+    float: right;
+    transform: scale(1.5);
+
+}
+.accordion__button:hover{
+    background-color: #ffffff;
+    border-color:#E7717D;
+    color: #E7717D;
+}
+.accordion__button--active{
+    background-color: #ffffff;
+    color: #E7717D;
+    border-color:#E7717D;
+}
+.accordion__button--active::after{
+    content:'\25b4';
+}
+.accordian__content{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s;
+
+    padding: 0px 10PX;
+    margin: 0px auto;
+}
 
 
 /* Page content */
@@ -101,6 +137,31 @@ h3 {
 aside {
     padding: 2%;
     align-content: center;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+.card-title{
+    background-color: #7E655A;
+    margin: -16px;
+    width: 19.9rem;
+    padding: 15px;
+    color: #C2B9B0;
+    text-align:center;
+}
+#describe-title{
+    color: #E7717D;
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+}
+.describe{
+    color: #7E655A;
+    width: 60%;
+    margin: 20px auto 20px auto;
+    text-align: center;
+
 }
 
 
