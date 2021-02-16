@@ -8,6 +8,7 @@
     <meta name="keywords" content="Hotel, Room, Restaurant, Hämeenlinna">
     <meta name="description" content="Hotel restaurant in Hämeenlinna">
     <meta name="author" content="Samu Uunonen">
+    <meta name="author" content="Hossein Hazratgholizadeh">
     <!-- Styling files -->
     <link href="reservation-style.css" rel="stylesheet">
     <?php include 'styling-links.php'; ?>
@@ -15,25 +16,25 @@
 
 </head>
 <body>
+    <header>
     <!-- Include navigation bar from navbar.php file -->
-    <?php include 'navbar.php'; ?>
-
-    <div id="progressPlan" class="container2">
-        <h2 id="describe-title">Step progress Bar</h2>
-        <div id="stepProgressBar">
-            <div class="step">
-                <p class="step-text">Step 1</p>
-                <div class="bullet completed">1</div>
+        <?php include 'navbar.php'; ?>
+        <div id="progressPlan" class="container2">
+            <h2 id="describe-title">Step progress Bar</h2>
+            <div id="stepProgressBar">
+                <div class="step">
+                    <p class="step-text">Step 1</p>
+                    <div class="bullet completed">1</div>
+                </div>
+                <div class="step">
+                    <p class="step-text">Step 2</p>
+                    <div class="bullet">2</div>
+                </div>
+                <div class="step">
+                    <p class="step-text">Step 3</p>
+                    <div class="bullet">3</div>
+                </div>
             </div>
-            <div class="step">
-                <p class="step-text">Step 2</p>
-                <div class="bullet">2</div>
-            </div>
-            <div class="step">
-                <p class="step-text">Step 3</p>
-                <div class="bullet">3</div>
-            </div>
-        </div>
 
         <div id="main">
             <a href="reservation-p1.php" >
@@ -41,10 +42,10 @@
             </a>
             <button id="finishBtn" disabled>Finish</button>
             <p><br></p>
-            <h4 id="content">Personal Information</h4>
+            <h1 id="TittleOfReservation">Personal Information</h1>
 
         </div>
-    </div>
+    </header>
     <main>
         <p class="describe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, hic recusandae. Optio eaque inventore laudantium, amet magni illum est aperiam quod 
             consequatur voluptatum. Quas nam aspernatur enim, doloribus dolorum dolor.</p>

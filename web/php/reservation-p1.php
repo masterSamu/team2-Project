@@ -8,6 +8,7 @@
     <meta name="keywords" content="Hotel, Room, Restaurant, Hämeenlinna">
     <meta name="description" content="Hotel restaurant in Hämeenlinna">
     <meta name="author" content="Samu Uunonen">
+    <meta name="author" content="Hossein Hazratgholizadeh">
     <!-- Styling files -->
     <link href="reservation-style.css" rel="stylesheet">
     <?php include 'styling-links.php'; ?>
@@ -40,7 +41,7 @@
             <button id="previousBtn" disabled>Previous</button>
             <button id="finishBtn" disabled>Finish</button>
             <p><br></p>
-            <h4 id="content">Select Room</h4>
+            <h1 id="TittleOfReservation">Select Room</h1>
 
         </div>
     </div>
