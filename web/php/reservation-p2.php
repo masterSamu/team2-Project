@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- Required meta tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Hotel, Room, Restaurant, Hämeenlinna">
-    <meta name="description" content="Hotel restaurant in Hämeenlinna">
-    <meta name="author" content="Samu Uunonen">
-    <meta name="author" content="Hossein Hazratgholizadeh">
-    <!-- Styling files -->
-    <link href="reservation-style.css" rel="stylesheet">
-    <?php include 'styling-links.php'; ?>
-    <title>Reservation page2</title>
 
-</head>
-<body>
+<!-- Header part -->
+<?php
+
+  $metaKeywords = "Hotel, Hämeenlinna";
+  $metaDescription = "Hotel, Hämeenlinne";
+  $title = "Hame Hotel - Home";
+  $customCssCode = '<link href="reservation-style.css" rel="stylesheet">';
+
+  include 'header.php';
+?>
+
     <header>
     <!-- Include navigation bar from navbar.php file -->
         <?php include 'navbar.php'; ?>
