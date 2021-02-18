@@ -1,24 +1,12 @@
-<!doctype html>
-<html lang="en">
+<!-- Header part -->
+<?php
 
-    <head>  
+  $metaKeywords = "Hotel, Hämeenlinna, Booking, Rooms";
+  $metaDescription = "Hotel, Hämeenlinna, Rooms";
+  $title = "Hame Hotel - Rooms";
 
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="Hotel, Room, Restaurant, Hämeenlinna">
-        <meta name="description" content="Hotel restaurant in Hämeenlinna">
-        <meta name="author" content="Samu Uunonen">
-
-        <!-- Styling files -->
-        <?php include 'styling-links.php'; ?>
-        
-
-        <title>Hame Hotel - Rooms</title>
-    </head>
-    <body>
-        <!-- Include navigation bar from navbar.php file -->
-        <?php include 'navbar.php'; ?>
+  include 'header.php';
+?>
 
         <main>      <!-- Page content -->
             <div class="container-fluid">
