@@ -21,7 +21,8 @@ if (empty($fname) || empty($lname) || empty($email) || empty($tel) || empty($bda
         )";
 
     if ($conn->query($sql) === TRUE) {
-        // do something if query complete succcesfully
+        // When query is submitted, move to homepage
+        header('Location: home.php');
     } else {
         echo "error: " . $sql. "<br>". $conn->error;
     }
