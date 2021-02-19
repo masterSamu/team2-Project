@@ -11,8 +11,6 @@
 ?>
 
     <header>
-    <!-- Include navigation bar from navbar.php file -->
-        <?php include 'navbar.php'; ?>
         <div id="progressPlan" class="container2">
             <h2 id="describe-title">Step progress Bar</h2>
             <div id="stepProgressBar">
