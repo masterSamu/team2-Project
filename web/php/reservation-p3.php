@@ -41,6 +41,35 @@
         </div>
     </div>
     <main>
+
+        <div class="container" id="feedback-container">
+            <h2>How easy our reservation process was?</h2>
+            <form id="res-feedback" name="res-feedback" onsubmit="" action="res-feedback.php" method="POST">
+                <div class="row" id="red-feedback-radio-row">
+                    <div class="col-md-4">
+                        <label class="radio-inline">
+                        <input type="radio" name="optradio" id="res-feedback-radio1" value="1">Difficult
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="radio-inline">
+                        <input type="radio" name="optradio" id="res-feedback-radio2" value="2">Managable
+                        </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="radio-inline">
+                        <input type="radio" name="optradio" id="res-feedback-radio3" value="3">Easy
+                        </label>
+                    </div>
+                    <div class="row">
+                        <input type="submit" id="res-feedback-submit" class="btn btn-primary" value="Submit feedback">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
         <p class="describe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, hic recusandae. Optio eaque inventore laudantium, amet magni illum est aperiam quod 
             consequatur voluptatum. Quas nam aspernatur enim, doloribus dolorum dolor.</p>
 
