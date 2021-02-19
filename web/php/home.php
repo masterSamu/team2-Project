@@ -11,6 +11,8 @@
 
 
 
+
+
 <!-- Home Page content -->
 
 <!-- Top Image Carousel -->
@@ -103,22 +105,80 @@
                     </div>
                 </div>
 
+
+                
+
                 <!-- Hero Image -->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="hero-image" id="homepage-hero-image">
                             <div class="hero-text">
+                              <h3>Be first one to hear from our offers!</h3>
                               <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubscribeNewsletterHome">Subscribe newsletter</button>
                                 <div class="collapse" id="collapseSubscribeNewsletterHome">
-                                  <div class="card card-body">
-                                    <p>Lorem ipsum dolor sit amet</p>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubscribeNewsletterHome">Close</button>
+                                  <div class="card card-body" id="subscribe-card">
+                                    <!-- Newsletter subscription -->
+                                    <form id="subscribe-newsletter" name="subscribe-newsletter" onsubmit="validateSubscribeForm(this)" action="subscribe-newsletter.php" method="POST">
+                                      <div class="row">
+                                        <p>Subscribe newsletter to hear first from our offers!</p>
+                                      </div>
+                                      <div class="row">
+                                        <input type="email" id ="email" name="email" placeholder="Email address" ><br>
+                                      </div>
+                                      <div class="row">
+                                        <label id="lblCheckbox"><input type="checkbox" id="checkbox" name="checkbox">I agree to subscribe newsletter</label>
+                                      </div>
+                                      <div class="row">
+                                        <input type="submit" class="bn btn-primary" value="Subscribe"> 
+                                      </div>
+                                      <div class="row">
+                                        <!-- Form error message -->
+                                        <div id="error"></div>
+                                      </div>
+                                      <script>
+                                      // This function will give notifications to user when filling subscribe-newsletter form
+                                      function validateSubscribeForm() {
+                                        let email = document.forms["subscribe-newsletter"]["email"];
+                                        let checkBox = document.getElementById('checkbox');
+
+                                        // check if email field is not empty.
+                                        if (email.value == "") {
+                                          event.preventDefault();
+                                          document.getElementById("error").style.color = "red";
+                                          document.getElementById("error").innerHTML = "Email field is empty";
+                                          document.getElementById("email").style.borderType = "5px solid";
+                                          document.getElementById("email").style.borderColor = "red";
+                                          return false;
+                                          // check if checkboc is checked
+                                        } else if (!checkBox.checked) {
+                                          if (email.value != "") {
+                                            document.getElementById("email").style.borderColor = "green";
+                                          }
+                                          event.preventDefault();
+                                          document.getElementById("error").style.color ="red";
+                                          document.getElementById("error").innerHTML = "You have not agreed to subscribe newsletter";
+                                          document.getElementById("lblCheckbox").style.color = "red";
+                                          return false;
+                                        } else {
+                                          document.getElementById("error").style.color = "red";
+                                          document.getElementById("email").style.borderColor = "white";
+                                            alert("You have succesfully subscribed our newsletter!");
+                                            return true;
+                                        }
+                                      }
+                                      </script>
+                                    </form>
                                   </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
+
+                
 
 
 
