@@ -176,13 +176,5 @@
       </div>
   </div>
 
-
-
-
-                
-
-
-
-
 <!-- Include footer from footer.php file -->
 <?php include 'Footer.php'; ?>
