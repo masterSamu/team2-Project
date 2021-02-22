@@ -309,16 +309,42 @@ aside {
 /* Reservationg page */
 
     /* feedback form */
-    .radio-inline {
-        padding: 10%;
+    .input-feedback {
+        position: absolute;
+        left: -9999px;
     }
 
-    #red-feedback-radio-row {
+    #res-feedback-form {
         text-align: center;
+    }
+
+    #feedback-container h2 {
+        text-align: center;
+    }
+
+    #feedback-container input[type=radio]:checked + label>img {
+        border-radius: 100px;
+        border: 3px solid #afd275;
+        box-shadow: 0 0 3px 3px #090;
+        
+      }
+
+    #feedback-container input[type=radio] + label>img {
+        transition: 500ms all;
+        margin-top: 20px;
+      }
+
+
+    #res-feedback-radio-row {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 600px;
     }
 
     #res-feedback-submit {
         margin: 0 auto;
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
         max-width: fit-content;
     }
 
