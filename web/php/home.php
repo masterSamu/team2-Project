@@ -1,26 +1,14 @@
-<!doctype html>
-<html lang="en">
 
-  <head>
+<!-- Header part -->
+<?php
 
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="keywords" content="Hotel, Room, Restaurant, Hämeenlinna">
-      <meta name="description" content="Hotel in Hämeenlinna">
-      <meta name="author" content="team2">
+  $metaKeywords = "Hotel, Hämeenlinna";
+  $metaDescription = "Hotel, Hämeenlinne";
+  $title = "Hame Hotel - Home";
 
-      <!-- Styling files -->
-      <?php include 'styling-links.php'; ?>
+  include 'header.php';
+?>
 
-
-      <title>Hame Hotel - Homepage</title>
-
-  </head>
-
-
-<!-- Include navigation bar from navbar.php file -->
-<?php include 'navbar.php'; ?>
 
 
 <!-- Home Page content -->

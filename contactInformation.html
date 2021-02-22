@@ -5,32 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        #res-page-cus-info-table fieldset {
+            width: fit-content;
+        }
+
+        #res-page-cus-info-table table {
+            border-spacing: 1rem;
+            font-size: 1.2rem;
+        }
+
+        #res-page-cus-info-table td {
+            padding: 0.2rem;
+            height: 1.5rem;
+        }
+    </style>
+
 </head>
 <body>
     
     <!-- Contact information form for room reservation -->
-    <form action="">
+    <form  id="res-page-cus-info-table" method="POST" action="save-customer-info.php">
         <fieldset>
-            <legend>Contact information</legend>
+            <legend>Customer information</legend>
             <table>
                 <tr>
                     <td><label for="fname">First name:</label></td>
-                    <td><input type="text" id="fname" name="fname"></td>
+                    <td><input type="text" id="fname" name="fname" required></td>
                 </tr>
                 <tr>
                     <td><label for="lname">Last name:</label></td>
-                    <td><input type="text" id="lname" name="lname"></td>
+                    <td><input type="text" id="lname" name="lname" required></td>
                 </tr>
                 <tr>
                     <td><label for="email">Email:</label></td>
-                    <td><input type="email" if="email" name="email"></td>
+                    <td><input type="email" if="email" name="email" required></td>
                 </tr>
                 <tr>
                     <td><label for="tel">Phone number:</label></td>
-                    <td><input type="tel" id="tel" name="tel"></td>
+                    <td><input type="tel" id="tel" name="tel" required></td>
+                </tr>
+                <tr>
+                    <td><label for="bdate">Birth date:</label></td>
+                    <td><input type="date" id="bdate" name="bdate" value="" min="1900-01-01" max="2021-01-01" required></td>
                 </tr>
             </table>
-            <input type="submit" class="btn btn-primary" value="Continue">
+            <input type="submit" class="btn btn-primary" value="Submit">
         </fieldset>
     </form>
 

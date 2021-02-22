@@ -1,26 +1,12 @@
-<!doctype html>
-<html lang="en">
+<!-- Header part -->
+<?php
 
-<head>
+  $metaKeywords = "Hotel, Hämeenlinna";
+  $metaDescription = "Hotel, Hämeenlinne";
+  $title = "Hame Hotel - Home";
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Hotel parking, Hämeenlinna">
-    <meta name="description" content="Hotel parking in Hämeenlinna">
-    <meta name="author" content="team2">
-
-    <!-- Styling files -->
-    <?php include 'styling-links.php'; ?>
-
-    
-    <title>Hame Hotel - Parking</title>
-
-</head>
-
-<body>
-    <!-- Include navigation bar from navbar.php file -->
-    <?php include 'navbar.php'; ?>
+  include 'header.php';
+?>
 
     <!-- Parking page content -->
 
