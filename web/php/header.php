@@ -23,6 +23,9 @@
         <link href="Default.css" rel="stylesheet">'
         . $customCssCode . '
 
+        <!-- Javascripts -->
+        '. $scripts . '
+
       <title>'. $title. '</title>
 
   </head>
