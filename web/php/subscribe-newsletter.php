@@ -12,7 +12,14 @@
             // When query is submitted, move to homepage
             header('Location: home.php');
         } else {
-            echo "error: " . $sql. "<br>". $conn->error;
+            include 'retrieve-emails.php';
+            if ($emailExists == true) {
+                echo 'This email has already subscribed our newsletter';
+                echo '<br><button><a href="home.php">Get back to home page</a></button>';
+            } else {
+                echo "error: " . $sql. "<br>". $conn->error;
+            }
+            
         }
         $conn->close();
     }
