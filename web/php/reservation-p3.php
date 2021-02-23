@@ -6,7 +6,7 @@
   $metaDescription = "Hotel, Hämeenlinna";
   $title = "Hame Hotel - Reservation 3";
   $customCssCode = '<link href="reservation-style.css" rel="stylesheet">';
-
+  $scripts = '<script src="scripts/validateFeedback.js"></script>';
   include 'header.php';
 ?>
 
@@ -45,7 +45,7 @@
         <!-- Feedback form (easy = 3points, managable = 2p, difficult = 1p) -->
         <div class="container" id="feedback-container">
             <h2>What do you think about our reservation process?</h2>
-            <form id="res-feedback-form" name="res-feedback" onsubmit="validateFeedback()" action="res-feedback.php" target="iframe1-res" method="POST">
+            <form id="res-feedback-form" name="res-feedback" onsubmit="validateFeedback()" action="res-feedback.php" target="iframe-res" method="POST">
                 <div class="row" id="res-feedback-radio-row">
                     <div class="col-md-4">
                         <div class="row-radioButtons">
@@ -73,61 +73,19 @@
                     </div>
                     <!-- Complete reservation -->
                     <div class="row-radioButtons">
-                        <input type="submit" id="res-feedback-submit" class="btn btn-primary" value="Complete reservation">
+                        <input type="submit" id="res-feedback-submit" class="btn btn-primary" value="Submit feedback">
                         <div class="row">
                             <!-- Form error message -->
                             <p id="error"></p>
                             <p id="feedback-message"></p>
                     </div>
-
                     <!-- Iframe target for feedback -->
                     <div style="visibility:hidden">
-                        <iframe NAME="iframe-res" WIDTH="5" HEIGHT="5"></iframe>
+                        <iframe id="iframe-res" name="iframe-res" width="5" height="5"></iframe>
                     </div>
-
-                    <script>
-                        function validateFeedback() {
-                            let radios = document.forms["res-feedback"]["optradio"];
-                            validateForm = false;
-
-                            // Check if any of radios has been selected
-                            if (radios.value > 0) {
-                                validateForm = true;
-                            } else {
-                                validateForm = false;
-                            }
-                            
-                            // Do actions based on radios selected or not
-                            if (validateForm == true)
-                            {
-                                document.getElementById("error").style.color ="green";
-                                document.getElementById("error").innerHTML = "Thank you for your feedback!";
-                            } else {
-                                event.preventDefault();
-                                document.getElementById("error").style.color ="red";
-                                document.getElementById("error").innerHTML = "You have to select one of the radio buttons first";
-                            }
-
-                            // Response to succesfull feedback
-                            if (radios.value == 1)
-                            {
-                                document.getElementById("feedback-message").innerHTML ="We are sorry to hear that our process was difficult.";
-                            }
-                            else if (radios.value == 2)
-                            {
-                                document.getElementById("feedback-message").innerHTML ="We still have things to improve at process.";
-                            }
-                            else if (radios.value == 3)
-                            {
-                                document.getElementById("feedback-message").innerHTML ="We are glad to hear that you liked our process.";
-                            }
-
-
-                        }
-                    </script>
                 </div>
             </form>
-        </div>
+        </div>                            
 
         <p class="describe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, hic recusandae. Optio eaque inventore laudantium, amet magni illum est aperiam quod 
             consequatur voluptatum. Quas nam aspernatur enim, doloribus dolorum dolor.</p>
