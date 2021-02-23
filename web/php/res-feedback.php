@@ -11,8 +11,7 @@
         $sql = "INSERT INTO resfeedback (points) VALUES ('$points');";
 
         if ($conn->query($sql) === TRUE) {
-            // When query is submitted, move to homepage
-            header('Location: home.php');
+            
         } else {
             echo "error: " . $sql. "<br>". $conn->error;
         }
