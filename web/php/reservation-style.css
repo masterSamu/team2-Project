@@ -7,12 +7,9 @@
   flex-wrap: wrap;
 }
 .container2 {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #c2b9b0;
-  width: 50%;
+  margin: 0px auto;
+  background-color:#C2B9B0;
+  width: 100%;
 }
 .steps-section {
   display: flex;
@@ -22,13 +19,19 @@
   background-color: #c2b9b0;
   width: 100%;
   justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 0px;
 }
 .date-section {
-  display: inline-block;
-  background-color: #c2b9b0;
-  width: 50%;
-  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #c2cad0;
+  width: 600px;
   text-align: center;
+  justify-self: center;
+  margin: 10px auto;
+  justify-content: center;
 }
 .date-selection {
   margin: 10px;
@@ -40,15 +43,8 @@
   width: 200px;
   display: inline-block;
 }
-.describe-title {
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  align-self: center;
-  text-align: center;
-}
 #reservation-btn {
-  width: 50%;
+  width: 310px;
 }
 .extra_service img {
   width: 300px;
@@ -126,15 +122,19 @@ button:disabled:hover {
   bottom: 10px;
 }
 #personalForm {
-  margin: 20px auto;
-  width: 70%;
+  margin: 0 auto;
+  width: 800px;
+}
+#personalBtn{
+  margin: 0 auto;
+  width:200px;
 }
 
 #inputPersonalInfo {
   background-color: #afd275;
   margin: 0 auto;
-  width: 70%;
-  padding: 20px;
+  width: 800px;
+  padding: 0px 10px;
   margin-bottom: 10px;
   border: solid #afd275;
   border-radius: 20px;
@@ -146,7 +146,7 @@ button:disabled:hover {
 #services_accordion {
   background-color: #e7717d;
   margin: 0 auto;
-  width: 70%;
+  width: 800px;
 }
 #reservation-p2-header {
   background-color: #c2cad0;
@@ -215,5 +215,13 @@ button:disabled:hover {
 @media only screen and (max-width: 600px) {
   .extra_service {
     width: 100%;
+  }
+  #personalForm {
+    width: 95%;
+  }
+  
+  #inputPersonalInfo {
+    width: 95%;
+
   }
 }
