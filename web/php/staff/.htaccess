@@ -1,0 +1,4 @@
+AuthName "Hame Hotel's staff area"
+AuthUserFile "C:\MAMP\htdocs\team2-Project\web\php\staff\.htpasswd"
+AuthType Basic
+require valid-user
