@@ -71,48 +71,56 @@
 
         $adult = $_SESSION['adualts-number'];
         $child = $_SESSION['child-number'];
+
         # calculate the number of selected days
         $startDate = new DateTime($_SESSION['start-date']);
         $endDate = new DateTime($_SESSION['end-date']);
         $difference = $endDate->diff($startDate);
         $diffNight=($difference->format("%a")); 
         
-        echo '<br>'.$diffNight.'.' ;
-        #$numberOfRooms 
-        function corrCalculator($adult , $child) {
-            $corrPrice = $adult + ($child/2);
-            $corrRoom = $adult + $child ;
-        }
+
+        # create a corrolation which is going to calculate the price for different number of customers
+        $corrPrice = $adult + ($child/2);
+
+        $corrRoom = $adult + $child ;
+
+
         #create a class for rooms
         class Room {
             // Properties
             public $name;
             public $price;
             public $capacity;
-          
-            function __construct($name , $price , $capacity) {
+            public $roomNumber;
+            public $totalPrice;
+            
+            # this is a constructor
+            function __construct(string $name ,int $price , int $capacity) {
                 $this->name = $name;
                 $this->price = $price;
                 $this->capacity = $capacity;
 
               }
-            // This method is calculate the price of room for specific room and number of persons
-            function calculator($corrPrice, $corrRoom, $diffNight) {
-                echo 'Daily price for '.$name.'is'.$price.'Euro<br>';
-                $roomNumber = round($corrRoom/$capacity) ;
-                echo 'For you'.$roomNumber.' Rooms are requiered<br>';
-                $totalPrice = $corrPrice * $price * $diffNight;
-                echo 'Total price for these room is: '.$totalPrice. 'euro<br>';
+            # This method is calculate the price and number of rooms for specific room and number of persons
+            function calculator($corrPrice , $corrRoom , $diffNight ) {
+                $this->roomNumber = round($corrRoom/$this->capacity);
+                $this->totalPrice = $corrPrice * $this->price * $diffNight;
+                echo 'Daily price for '.$this->name.' is '.$this->price.' Euro<br>';
+                echo 'For you '.$this->roomNumber.' Rooms are requiered<br>';
+                echo ' you have selected '.$diffNight.' days<br>';
+                echo 'Total price for this room for '.$diffNight.' days is: '.$this->totalPrice. ' euro<br>';
             }
           }
+
+          # Here we are creating objects for each room
           $classicSingle = new Room("Classic Single", 40 , 1);
           $standardDouble = new Room("Standard Double", 70 , 2); 
           $classicTwins = new Room("Classic Twins", 75 , 2); 
 
-          var_dump(get_object_vars($classicSingle));
-            $classicSingle->test();
-            $classicSingle->calculator($corrPrice, $corrRoom, $diffNight);
+          #var_dump(get_object_vars($classicSingle));
+            #$classicSingle->test();      
     ?>
+
     </div>
     <p class="describe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, hic recusandae. Optio eaque inventore laudantium, amet magni illum est aperiam quod 
         consequatur voluptatum. Quas nam aspernatur enim, doloribus dolorum dolor.</p>
@@ -129,9 +137,12 @@
                         adipisicing elit. Laudantium modi, voluptatum, ullam dolore nam dolor autem explicabo molestiae quod,
                         facere harum corrupti quas reprehenderit inventore beatae omnis odio minima laboriosam.
                         </p>
-                        <?php
-                        $classicSingle->calculator($corrPrice, $corrRoom, $diffNight);
-                        ?>
+                        <p>
+                            <?php
+                            # using the calculator function to calculate and print the price and number of rooms
+                            $classicSingle->calculator($corrPrice, $corrRoom, $diffNight);
+                            ?>
+                        </p>
                         <a href="reservation-p2.php" class="btn btn-primary">Select This Room</a>
                     </article>
                 </div>
@@ -157,6 +168,12 @@
                         adipisicing elit. Laudantium modi, voluptatum, ullam dolore nam dolor autem explicabo molestiae quod,
                         facere harum corrupti quas reprehenderit inventore beatae omnis odio minima laboriosam.
                         </p>
+                        <p>
+                            <?php
+                            # using the calculator function to calculate and print the price and number of rooms
+                            $standardDouble->calculator($corrPrice, $corrRoom, $diffNight);
+                            ?>
+                        </p>
                         <a href="reservation-p2.php" class="btn btn-primary">Select This Room</a>
                     </article>
                 </div>
@@ -181,6 +198,12 @@
                         Hic necessitatibus at vel ab rem. Lorem ipsum dolor sit amet consectetur 
                         adipisicing elit. Laudantium modi, voluptatum, ullam dolore nam dolor autem explicabo molestiae quod,
                         facere harum corrupti quas reprehenderit inventore beatae omnis odio minima laboriosam.
+                        </p>
+                        <p>
+                            <?php
+                            # using the calculator function to calculate and print the price and number of rooms
+                            $classicTwins->calculator($corrPrice, $corrRoom, $diffNight);
+                            ?>
                         </p>
                         <a href="reservation-p2.php" class="btn btn-primary">Select This Room</a>
                     </article>

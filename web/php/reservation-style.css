@@ -38,6 +38,12 @@
   width: 200px;
   display: inline-block;
 }
+#date-rsault{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .person-selection {
   margin: 10px;
   width: 200px;

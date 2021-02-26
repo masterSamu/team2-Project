@@ -46,14 +46,15 @@
     </div>
     <h1 id="reservation-p2-header">Fill your personal information</h1>
     <div id="personalForm" class="personalForm">
-        <?php
-        session_start();
-        echo"Start date: ".$_SESSION['start-date'].' --- ' ;
-        echo"End date: ".$_SESSION['end-date'].'<br>' ;
-        echo"Number of adults: ".$_SESSION['adults-number'].' --- ';
-        echo"Number of childeren: ".$_SESSION['child-number'].'<br>' ;
-
-        ?>
+        <div id="date-rsault">
+          <?php
+          session_start();?>
+          <p><?php echo 'Start date: '.$_SESSION['start-date'].' ' ;?><p>
+          <p><?php echo 'End date: '.$_SESSION['end-date'].'<br>' ; ?><p>
+          <p><?php echo 'Number of adults: '.$_SESSION['adualts-number'].'<br> '; ?><p>
+          <p><?php echo 'Number of childeren: '.$_SESSION['child-number'].'<br>' ; ?><p>
+          
+        </div>
       <form  action="reservation-p3.php" method="POST" class="row g-3">
           <div class="col-4">
               <label for="inputName" class="form-label">First Name</label>
@@ -65,11 +66,11 @@
           </div>
           <div class="col-4">
               <label for="inputFamily" class="form-label">Last Name</label>
-              <input type="text" class="form-control" id="inputFamily" placeholder="Family" name="inputFamily" required pattern="[a-zA-Z]{3,}" title="Please enter your Family which should be more than 3 leters">
+              <input type="text" class="form-control" id="inputFamily" placeholder="Family" name="inputFamily"  pattern="[a-zA-Z]{3,}" title="Please enter your Family which should be more than 3 leters" required>
           </div>
           <div class="col-md-6">
               <label for="inputEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="email" name="inputEmail" required pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{1,}" title="Please enter a valid email Address">
+              <input type="email" class="form-control" id="inputEmail" placeholder="email" name="inputEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" title="Please enter a valid email Address" required>
           </div>
           <div class="col-md-6">
               <label for="inputBday" class="form-label">Date of birth</label>
@@ -89,7 +90,7 @@
           </div>
           <div class="col-12">
               <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <input class="form-check-input" type="checkbox" id="gridCheck" required>
                   <label class="form-check-label" for="gridCheck">
                       I hereby declare that the information provided is true and correct
                   </label>
