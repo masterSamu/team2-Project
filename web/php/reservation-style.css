@@ -8,7 +8,7 @@
 }
 .container2 {
   margin: 0px auto;
-  background-color:#C2B9B0;
+  background-color: #c2b9b0;
   width: 100%;
 }
 .steps-section {
@@ -38,12 +38,13 @@
   width: 200px;
   display: inline-block;
 }
-#date-rsault{
+#date-rsault {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .person-selection {
   margin: 10px;
   width: 200px;
@@ -56,6 +57,7 @@
   width: 300px;
   height: 100%;
 }
+
 .progress-buttons {
   margin: 0 auto;
   justify-content: center;
@@ -131,19 +133,27 @@ button:disabled:hover {
   margin: 0 auto;
   width: 800px;
 }
-#personalBtn{
+#personalBtn {
   margin: 0 auto;
-  width:200px;
+  width: 200px;
 }
 
-#inputPersonalInfo {
+.print-area {
   background-color: #afd275;
   margin: 0 auto;
-  width: 800px;
+  width: 80%;
   padding: 0px 10px;
   margin-bottom: 10px;
   border: solid #afd275;
-  border-radius: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.print_reservation {
+  width: 550px;
+}
+.print_personal {
+  width: 550px;
 }
 .print {
   display: none;
@@ -164,9 +174,10 @@ button:disabled:hover {
   padding: 0;
 }
 .services-checkbox {
-  margin: 10px auto;
-  text-align: center;
+  margin: 15px auto;
+  text-align: left;
   padding-top: 10px;
+  padding-left: 10px;
 }
 .ser-checkbox {
   width: 20px;
@@ -179,9 +190,9 @@ button:disabled:hover {
   padding: 10px;
 }
 .card {
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
 }
 .accordion-body {
   background-color: #ffffff;
@@ -192,7 +203,6 @@ button:disabled:hover {
   height: 55px;
 }
 
-}
 .extraServices {
   display: flex;
   flex-wrap: wrap;
@@ -225,9 +235,8 @@ button:disabled:hover {
   #personalForm {
     width: 95%;
   }
-  
+
   #inputPersonalInfo {
     width: 95%;
-
   }
 }

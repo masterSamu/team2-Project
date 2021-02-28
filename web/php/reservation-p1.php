@@ -28,7 +28,7 @@
             </div>
             <div id="main" class="progress-buttons">
                 <a href="reservation-p1.php" >
-                    <button id="previousBtn">Previous</button>
+                    <button id="previousBtn" disabled>Previous</button>
                 </a>
                 <button id="finishBtn" disabled>Finish</button>
             </div>
@@ -81,9 +81,8 @@
 
         # create a corrolation which is going to calculate the price for different number of customers
         $corrPrice = $adult + ($child/2);
-
+        # create a corrolation which is going to calculate the number of rooms
         $corrRoom = $adult + $child ;
-
 
         #create a class for rooms
         class Room {
@@ -105,18 +104,31 @@
             function calculator($corrPrice , $corrRoom , $diffNight ) {
                 $this->roomNumber = round($corrRoom/$this->capacity);
                 $this->totalPrice = $corrPrice * $this->price * $diffNight;
-                echo 'Daily price for '.$this->name.' is '.$this->price.' Euro<br>';
+                echo 'Daily price for '.$this->name.' room is '.$this->price.' Euro<br>';
                 echo 'For you '.$this->roomNumber.' Rooms are requiered<br>';
                 echo ' you have selected '.$diffNight.' days<br>';
                 echo 'Total price for this room for '.$diffNight.' days is: '.$this->totalPrice. ' euro<br>';
             }
           }
 
-          # Here we are creating objects for each room
-          $classicSingle = new Room("Classic Single", 40 , 1);
-          $standardDouble = new Room("Standard Double", 70 , 2); 
-          $classicTwins = new Room("Classic Twins", 75 , 2); 
+          # Here we are creating objects for each room 
+ 
 
+          # Check for holidays, in holidays the prices is 1.5*roomPrice
+          $startHolidays = new DateTime('2021-12-15');
+          $endHolidays = new DateTime('2022-01-15');
+
+          if ($startDate>= $startHolidays && $endDate>= $endHoliday){
+            echo "Your date is in holidays";
+            $classicSingle = new Room("Classic Single", 1.5*40 , 1);
+            $standardDouble = new Room("Standard Double", 1.5*70 , 2); 
+            $classicTwins = new Room("Classic Twins", 1.5*75 , 2);
+          }else{
+            $classicSingle = new Room("Classic Single", 40 , 1);
+            $standardDouble = new Room("Standard Double", 70 , 2); 
+            $classicTwins = new Room("Classic Twins", 75 , 2);
+
+          }
           #var_dump(get_object_vars($classicSingle));
             #$classicSingle->test();      
     ?>
@@ -139,12 +151,19 @@
                         </p>
                         <p>
                             <?php
+                            if (is_null($_SESSION['start-date']) || is_null($_SESSION['end-date'])){
+                                echo "fill the date to claculate the prices";
+                            }else{
                             # using the calculator function to calculate and print the price and number of rooms
-                            $classicSingle->calculator($corrPrice, $corrRoom, $diffNight);
+                                $classicSingle->calculator($corrPrice, $corrRoom, $diffNight);
+                            }
+                            
+
                             ?>
                         </p>
-                        <a href="reservation-p2.php" class="btn btn-primary">Select This Room</a>
+                        <a id="selectClassicSingle" href="reservation-p2.php" class="btn btn-primary">Select This Room</a>
                     </article>
+
                 </div>
                 <!-- Right side image 1 -->
                 <div class="col-md-6">
@@ -169,12 +188,16 @@
                         facere harum corrupti quas reprehenderit inventore beatae omnis odio minima laboriosam.
                         </p>
                         <p>
-                            <?php
-                            # using the calculator function to calculate and print the price and number of rooms
-                            $standardDouble->calculator($corrPrice, $corrRoom, $diffNight);
+                        <?php
+                            if (is_null($_SESSION['start-date']) || is_null($_SESSION['end-date'])){
+                                echo "fill the date to claculate the prices";
+                            }else{
+                                # using the calculator function to calculate and print the price and number of rooms
+                                $standardDouble->calculator($corrPrice, $corrRoom, $diffNight);
+                            }
                             ?>
                         </p>
-                        <a href="reservation-p2.php" class="btn btn-primary">Select This Room</a>
+                        <a id="selectStandardDouble" href="reservation-p2.php" class="btn btn-primary">Select This Room</a>
                     </article>
                 </div>
                 <!-- Right side image 1 -->
@@ -200,12 +223,16 @@
                         facere harum corrupti quas reprehenderit inventore beatae omnis odio minima laboriosam.
                         </p>
                         <p>
-                            <?php
-                            # using the calculator function to calculate and print the price and number of rooms
-                            $classicTwins->calculator($corrPrice, $corrRoom, $diffNight);
+                        <?php
+                            if (is_null($_SESSION['start-date']) || is_null($_SESSION['end-date'])){
+                                echo "fill the date to claculate the prices";
+                            }else{
+                                # using the calculator function to calculate and print the price and number of rooms
+                                $classicTwins->calculator($corrPrice, $corrRoom, $diffNight);
+                            }
                             ?>
                         </p>
-                        <a href="reservation-p2.php" class="btn btn-primary">Select This Room</a>
+                        <a id="selectClassicTwins" href="reservation-p2.php" class="btn btn-primary">Select This Room</a>
                     </article>
                 </div>
                 <!-- Right side image 1 -->
@@ -228,42 +255,30 @@
 
     <!-- Include footer from footer.php file -->
     <?php include 'Footer.php'; ?>
-    <!--<script>
-        const previousBtn = document.getElementById('previousBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const finishBtn = document.getElementById('finishBtn');
-        const content = document.getElementById('content');
-        const bullets = [ ...document.querySelectorAll('.bullet')];
+    <script>
 
-        const Max_steps = 3;
-        let currentStep = 1;
-        nextBtn.addEventListener('click' , () => {
-            const currentBullet = bullets[currentStep-1];
-            currentBullet.classList.add('completed');
-            currentStep++;
-            previousBtn.disabled = false;
-            if(currentStep==Max_steps){
-                nextBtn.disabled = true;
-                finishBtn.disabled = false;
-
-            }
-            content.innerText = `Step Number ${currentStep}`;
-        });
-        previousBtn.addEventListener('click' , () => {
-            const previousBullet = bullets[currentStep-2];
-            previousBullet.classList.remove('completed');
-            currentStep--;
-            nextBtn.disabled = false;
-            finishBtn.disabled = true;
-            if(currentStep==1){
-                previousBtn.disabled = true;
-            }
-            content.innerText = `Step Number ${currentStep}`;
-
-        });
-        finishBtn.addEventListener('click' , () => {
-            location.reload();
+    //with select any rooms the total price is going to totalPrice js variable
+    const selectClassicSingle = document.getElementById('selectClassicSingle');
+        selectClassicSingle.addEventListener('click' , () => {
+            let totalPrice = <?php echo $classicSingle->totalPrice ?>;
+            
+            //here we are trying to pass totalPrice js variable to reservation-p3
+            localStorage.setItem("totalPrice", totalPrice);
+            window.document.location = "reservation-p3.php";
         })
-    </script>-->
+    const selectClassicSingle = document.getElementById('selectStandardDouble');
+    selectClassicSingle.addEventListener('click' , () => {
+        let totalPrice = <?php echo $standardDouble->totalPrice ?>;
+    })
+    const selectClassicSingle = document.getElementById('selectClassicTwins');
+        selectClassicSingle.addEventListener('click' , () => {
+            let totalPrice = <?php echo $classicTwins->totalPrice ?>;
+        })
+    
+
+
+
+    </script>
+
 </body>
 </html>
