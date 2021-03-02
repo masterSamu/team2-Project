@@ -56,10 +56,13 @@
         
       </div>
       <div id="form-personal">
-        <form  action="reservation-p3.php" method="POST" class="row g-3">
+      <div id="error" ></div>
+
+        <!-- FORM IS START HERE-->
+        <form  id="main-form" action="reservation-p3.php" method="POST" class="row g-3">
           <div class="col-5">
               <label for="inputName" class="form-label">First Name</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Name" name="inputName" required pattern="[a-zA-Z]{3,}" title="Please enter your Name which should be more than 3 leters">
+              <input type="text" class="form-control" id="inputName" placeholder="Name" name="inputName"  pattern="[a-zA-Z]{3,}" title="Please enter your Name which should be more than 3 leters" required>
           </div>
           <div class="col-7">
               <label for="inputFamily" class="form-label">Last Name</label>
@@ -67,7 +70,7 @@
           </div>
           <div class="col-md-8">
               <label for="inputEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="email" name="inputEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" title="Please enter a valid email Address" required>
+              <input type="email" class="form-control" id="inputEmail" placeholder="email" name="inputEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" title="Please enter a valid email Address" onkeydown="validation()" required>
           </div>
           <div class="col-md-4">
               <label for="inputBday" class="form-label">Date of birth</label>
@@ -154,11 +157,80 @@
             </div>
           </div>
         </form>
+        <!-- FORM IS END HERE-->
+
       </div>
 
 </main>
 
+  <script>
+    const name = document.getElementById('inputName')
+    const family = document.getElementById('inputFamily')
+    const email = document.getElementById('inputEmail')
+    const bDay = document.getElementById('inputBday')
+    const country = document.getElementById('inputCountry')
 
+    const errorElement = document.getElementById('error')
+
+    const form = document.getElementById('main-form')
+
+    form.addEventListener('submit' , (e)=> {
+      let messages = []
+
+      // JS validation for required field
+      if (name.value === '' || name.value ==null){
+        messages.push('Name is required')
+      }
+      if (family.value === '' || family.value ==null){
+        messages.push('Family is required')
+      }
+      if (email.value === '' || email.value ==null){
+        messages.push('Email is required')
+      }
+      if (bDay.value === '' || bDay.value ==null){
+        messages.push('Choose your currect birthday')
+      }
+
+        // JS validation for lenght of name 
+      if (name.value.length <=3 || name.value.length>= 50){
+        messages.push('Your name should have 3 to 50 letters')
+      }
+
+
+      // this part dont let the empty form submited 
+      // this part also print the errors in div with id='error' which is right top of the form element
+      if (messages.length > 0 ){
+        e.preventDefault()
+        errorElement.innerText = messages.join(', ')
+      }  
+    })
+
+    // JS email validation
+    function validation(){
+      var form = document.getElementById('main-form');
+      var email = document.getElementById('inputEmail').value;
+      var text = document.getElementById('text');
+      var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      if (email.match(pattern)){
+        form.classList.add('valid');
+        form.classList.remove('invalid');
+        text.style.color = "#00ff00";
+
+      }else{
+        form.classList.remove('valid');
+        form.classList.add('invalid');
+        messages.push('Please write a valid email address')
+        text.style.color = "#ff0000";
+      }
+
+      if (email== ""){
+        form.classList.remove('valid');
+        form.classList.remove('invalid');
+        text.innerHTML = "";
+
+    }
+  </script>
     <!-- Include footer from footer.php file -->
     <?php include 'Footer.php'; ?>
 
