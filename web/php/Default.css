@@ -167,6 +167,7 @@ aside {
 
 /* Homepage bottom Hero image */
 
+
 #homepage-hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(images/giftcard.jpg);
@@ -191,10 +192,76 @@ aside {
   font-size: 1.5rem;
 }
 
+
 .hero-text p {
   font-size: 1rem;
   color: black;
 }
+
+
+/* Collapse subscribe newsletter card */
+#subscribe-card {
+    background-color: #C2B9B0;
+    padding: 20px;
+}
+
+#subscribe-newsletter .row {
+    margin: 5px;
+    padding: 1px;
+}
+
+#subscribe-newsletter input {
+    margin: 0 auto;
+}
+
+#subscribe-newsletter input[type="email"] {
+    max-width: 95%;
+}
+
+#subscribe-newsletter input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+    margin-right: 15px !important;
+}
+
+
+#subscribe-newsletter input[type="submit"] {
+    background-color: #afd275;
+    border-style: none;
+    max-width: 150px;
+    padding: 2%;
+}
+
+#subscribe-newsletter label {
+    padding: 5%;
+    color: black;
+    text-align: left;
+}
+
+
+
+#subscribe-newsletter p {
+    text-align: left !important;
+    padding: 1%;
+    color: black;
+}
+
+#subscription-error {
+    color: red;
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-text button {
+        font-size: 1rem;
+    }
+
+    .hero-text h3 {
+        font-size: 1.2rem;
+    }
+}
+
 
 /*
     Meeting room
@@ -234,6 +301,52 @@ aside {
   margin: 0 auto;
   padding: 10%;
 }
+
+
+
+/* Reservationg page */
+
+    /* feedback form */
+    .input-feedback {
+        position: absolute;
+        left: -9999px;
+    }
+
+    #res-feedback-form {
+        text-align: center;
+    }
+
+    #feedback-container h2 {
+        text-align: center;
+    }
+
+    #feedback-container input[type=radio]:checked + label>img {
+        border-radius: 100px;
+        border: 3px solid #afd275;
+        box-shadow: 0 0 3px 3px #090;
+        
+      }
+
+    #feedback-container input[type=radio] + label>img {
+        transition: 500ms all;
+        margin-top: 20px;
+      }
+
+
+    #res-feedback-radio-row {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    #res-feedback-submit {
+        margin: 0 auto;
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+        max-width: fit-content;
+    }
+
+
 
 /* Footer */
 

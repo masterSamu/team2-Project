@@ -14,12 +14,14 @@
     <link href="reservation-style.css" type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
 
 
+
 </head>
 
 <div class="reservation-header">
     <div id="progressPlan" class="container2">
         <div class="steps-section">
             <div class="step-progress-bar">
+
                 <div class="step">
                     <p class="step-text">Step 1</p>
                     <div class="bullet completed">1</div>
