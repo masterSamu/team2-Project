@@ -37,6 +37,7 @@
                   <li>reception@hamehotel.fi</li>
                 </ul>  
               </article>
+              <button class="btn btn-outline-success" type="submit"><a class="nav-link active" aria-current="page" href="contactForm.php">FILL IN CONTACT FORM HERE!</a></button>
             </div>
           </div>
         </div>
