@@ -157,7 +157,6 @@
                             # using the calculator function to calculate and print the price and number of rooms
                                 $classicSingle->calculator($corrPrice, $corrRoom, $diffNight);
                             }
-                            
 
                             ?>
                         </p>
