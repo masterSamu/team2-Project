@@ -1,0 +1,23 @@
+.container{
+	
+	margin: auto;
+  	width: 60%;
+  	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	}
+
+table{
+	height: 210px;
+	}
+label{
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:140px;
+	float:left;
+	}
+.btn{
+	float: right;
+	}
