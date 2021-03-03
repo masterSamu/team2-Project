@@ -149,18 +149,18 @@
                         facere harum corrupti quas reprehenderit inventore beatae omnis odio minima laboriosam.
                         </p>
                         <p>
-                            <?php
+                        <?php
                             if (is_null($_SESSION['start-date']) || is_null($_SESSION['end-date'])){
                                 echo "<b>Fill the dates to claculate the prices</b>";
 
                             }else{
-                            # using the calculator function to calculate and print the price and number of rooms
+                                # using the calculator function to calculate and print the price and number of rooms
                                 $classicSingle->calculator($corrPrice, $corrRoom, $diffNight);
+                                
                             }
-
                             ?>
                         </p>
-                        <button id="selectClassicSingle" href="reservation-p2.php" class="btn btn-primary">Select This Room</button>
+                        <button id="selectClassicSingle" class="btn btn-primary" onclick="roomsOnClick1()">Select This Room</button>
                     </article>
 
                 </div>
@@ -187,28 +187,17 @@
                         facere harum corrupti quas reprehenderit inventore beatae omnis odio minima laboriosam.
                         </p>
                         <p>
-                        <?php
+                            <?php
                             if (is_null($_SESSION['start-date']) || is_null($_SESSION['end-date'])){
                                 echo "<b>Fill the dates to claculate the prices</b>";
-                                echo "
-                                <script>
-                                selectClassicSingle.disabled = true;
-                                selectClassicTwins.disabled = true;
-                                selectStandardDouble.disabled = true;
-                                </script>";
+
                             }else{
                                 # using the calculator function to calculate and print the price and number of rooms
                                 $standardDouble->calculator($corrPrice, $corrRoom, $diffNight);
-
-                                echo "<script>
-                                selectClassicSingle.disabled = false;
-                                selectClassicTwins.disabled = false;
-                                selectStandardDouble.disabled = false;
-                                </script>";
                             }
                             ?>
                         </p>
-                        <button id="selectStandardDouble" href="reservation-p2.php" class="btn btn-primary">Select This Room</button>
+                        <button id="selectStandardDouble" class="btn btn-primary" onclick="roomsOnClick2()">Select This Room</button>
                     </article>
                 </div>
                 <!-- Right side image 1 -->
@@ -242,8 +231,8 @@
                                 $classicTwins->calculator($corrPrice, $corrRoom, $diffNight);
                             }
                             ?>
-                        </p>
-                        <button id="selectClassicTwins" href="reservation-p2.php" class="btn btn-primary">Select This Room</button>
+                        </p>                       
+                        <button id="selectClassicTwins" class="btn btn-primary" onclick="roomsOnClick3()">Select This Room</button>
                     </article>
                 </div>
                 <!-- Right side image 1 -->
@@ -262,19 +251,43 @@
 
     <!-- Include footer from footer.php file -->
     <?php include 'Footer.php'; ?>
+    
+
+    <?php // try to disabled the select room before we choose a date 
+    if (is_null($_SESSION['start-date']) || is_null($_SESSION['end-date'])){
+                                echo "<script>
+                                selectClassicSingle.disabled = true;
+                                selectClassicTwins.disabled = true;
+                                selectStandardDouble.disabled = true;
+                                </script>";
+                            }else{                             
+                                echo "<script>
+                                selectClassicSingle.disabled = false;
+                                selectClassicTwins.disabled = false;
+                                selectStandardDouble.disabled = false;
+                                </script>";
+                            }
+                            ?>
     <script>
 
     //with select any rooms the total price is going to totalPrice js variable
     const selectClassicSingle = document.getElementById('selectClassicSingle');
     const selectClassicTwins = document.getElementById('selectClassicTwins');
     const selectStandardDouble = document.getElementById('selectStandardDouble');
+
+
     const startDate = document.getElementById('start-date').value;
     const endDate = document.getElementById('end-date').value;
-    const reservationBtn = document.getElementById('reservation-btn');
 
+
+    function roomsOnClick1(){
+        document.location='reservation-p2.php'
+        <?php $_SESSION['totalprice']= $classicSingle->totalPrice;?> 
+
+    }
 
 //    selectClassicSingle.addEventListener('click' , () => {
- //       let totalPrice = <?php echo $classicSingle->totalPrice ?>;
+//           let totalPrice = <?php echo $classicSingle->totalPrice ?>;
         
         //here we are trying to pass totalPrice js variable to reservation-p3
 //        localStorage.setItem("totalPrice", totalPrice);
@@ -288,7 +301,6 @@
 //        })
     
 
-    // try to disabled the select room before we choose a date 
 //    if (startDate.value == '' || startDate.value ==null || endDate.value == '' || endDate.value ==null){
  //       selectClassicSingle.disabled = true;
 //        selectClassicTwins.disabled = true;
