@@ -1,34 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<!-- Header part -->
+<?php
 
-    <style>
-        #res-page-cus-info-table fieldset {
-            width: fit-content;
-        }
+  $metaKeywords = "Hotel, Hämeenlinna";
+  $metaDescription = "Hotel, Hämeenlinne, Contact Form";
+  $title = "Hame Hotel - Contact Form";
+  $customCssCode = '<link href="contactform.css" rel="stylesheet">';
+  include 'header.php';
+?>
 
-        #res-page-cus-info-table table {
-            border-spacing: 1rem;
-            font-size: 1.2rem;
-        }
+<!-- Page Content-->
 
-        #res-page-cus-info-table td {
-            padding: 0.2rem;
-            height: 1.5rem;
-        }
-    </style>
+<main>
+	<div class="row">
+          <div class="col-md-12">
+            <h1>Contact Form</h1>
+          </div>
+        </div>
 
-</head>
-<body>
-    
-    <!-- Contact information form for room reservation -->
-    <form  id="res-page-cus-info-table" method="POST" action="save-customer-info.php">
+<!-- Contact information form for room reservation -->
+	<div class="container">
+	<form  id="res-page-cus-info-table" method="POST" action="save-customer-info.php">
         <fieldset>
-            <legend>Customer information</legend>
+            <legend align="center">Customer information</legend>
             <table>
                 <tr>
                     <td><label for="fname">First name:</label></td>
@@ -50,12 +43,16 @@
                     <td><label for="bdate">Birth date:</label></td>
                     <td><input type="date" id="bdate" name="bdate" value="" min="1900-01-01" max="2021-01-01" required></td>
                 </tr>
-            </table>
+		<!-- <tr>
+                    <td><label for="mes">Messages:</label></td>
+                    <td><input type="text" id="mes" name="mes"></td>
+                </tr> --!>
+	    </table>
             <input type="submit" class="btn btn-primary" value="Submit">
         </fieldset>
     </form>
+        </div>
+        </main>
 
-
-
-</body>
-</html>
+<!-- Include footer from footer.php file -->
+<?php include 'Footer.php'; ?>

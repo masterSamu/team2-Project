@@ -88,38 +88,9 @@
                 </div>
             </form>
         </div>                            
-
-        <p class="describe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, hic recusandae. Optio eaque inventore laudantium, amet magni illum est aperiam quod 
-            consequatur voluptatum. Quas nam aspernatur enim, doloribus dolorum dolor.</p>
-
-            <div id="inputPersonalInfo">
-                <?php 
-                $inputName = $_POST["inputName"];
-                $inputMidName = $_POST["inputMidName"];
-                $inputFamily = $_POST["inputFamily"];
-                $inputEmail = $_POST["inputEmail"];
-                $inputBday = $_POST["inputBday"];
-                $inputAddress = $_POST["inputAddress"];
-                $inputCity = $_POST["inputCity"];
-                $inputCountry = $_POST["inputCountry"];
-
-
-                echo "<p><b>Name:</b> $inputName</p>";
-                echo "<p><b>Middle Name:</b> $inputMidName</p>";
-                echo "<p><b>Family:</b> $inputFamily</p>";
-                echo "<p><b>Email:</b> $inputEmail</p>";
-                echo "<p><b>Date of Birth:</b> $inputBday</p>";
-                echo "<p><b>Address:</b> $inputAddress</p>";
-                echo "<p><b>City:</b> $inputCity</p>";
-                echo "<p><b>Country:</b> $inputCountry</p>";
-
-
-<main>
+      
     <p class="describe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, hic recusandae. Optio eaque inventore laudantium, amet magni illum est aperiam quod 
         consequatur voluptatum. Quas nam aspernatur enim, doloribus dolorum dolor.</p>
-
-        
-
 
             <?php 
             $inputName = $_POST["inputName"];

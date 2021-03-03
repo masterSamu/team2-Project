@@ -235,6 +235,3 @@
   </script>
     <!-- Include footer from footer.php file -->
     <?php include 'Footer.php'; ?>
-
-</body>
-</html>
