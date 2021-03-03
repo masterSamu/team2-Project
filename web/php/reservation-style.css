@@ -1,113 +1,242 @@
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
-.container2{
-    margin: -10px auto;
-    background-color:#C2B9B0;
-    width: 100%;
+.reservation-header {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
 }
-#main{
-    margin: -25px auto 20px auto;
-    text-align: center;
-    padding-bottom: 10px;
+.container2 {
+  margin: 0px auto;
+  background-color: #c2b9b0;
+  width: 100%;
 }
-#TittleOfReservation{
-    padding: 0;
-    margin: 0;
+.steps-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #c2b9b0;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 0px;
 }
-button{
-    padding:5px 10px;
-    color:  #e7717d;
-    border: 1px solid  #e7717d;
-    transition: 0.5s background-color;
-    margin:20px auto 20px auto;
+.date-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #c2cad0;
+  width: 600px;
+  text-align: center;
+  justify-self: center;
+  margin: 10px auto;
+  justify-content: center;
 }
-button:hover{
-    cursor: pointer;
-    background-color:  #e7717d;
-    color:white;
+.date-selection {
+  margin: 10px;
+  width: 200px;
+  display: inline-block;
 }
-button:disabled:hover{
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-.text-center{
-    text-align: center;
+#date-rsault {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-#stepProgressBar{
-    display: flex;
-    width: 300px;
-    margin:-20px auto;
-    margin-bottom: 40px;
-    justify-content: space-between;
-    align-items: flex-end;
+.person-selection {
+  margin: 10px;
+  width: 200px;
+  display: inline-block;
 }
-.step{
-    text-align: center;
+#reservation-btn {
+  width: 310px;
 }
-.step-text{
-    margin-bottom: 10px;
-    color:   #e7717d;
+.extra_service img {
+  width: 300px;
+  height: 100%;
 }
-.bullet{
-    background-color: aliceblue;
-    border-radius: 50%;
-    border: 1px solid #e7717d;
-    width: 35px;
-    height: 30px;
-    color: #e7717d;
-    display: inline-block;
-    position: relative;
-    transition: background-color 500ms;
-    line-height: 30px;
 
+.progress-buttons {
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 10px;
 }
-.bullet.completed{
-    color:white;
-    background-color: #e7717d;
+.Tittle-of-reservation {
+  background-color: #c2cad0;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  text-align: center;
+}
+button {
+  padding: 5px 10px;
+  color: #e7717d;
+  border: 1px solid #e7717d;
+  transition: 0.5s background-color;
+  margin: 20px auto 20px auto;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #e7717d;
+  color: white;
+}
+button:disabled:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.text-center {
+  text-align: center;
+}
 
+.step-progress-bar {
+  display: flex;
+  width: 300px;
+  margin: 0px auto;
+  justify-content: space-between;
 }
-.bullet.completed::after{
-    content: '';
-    position: absolute;
-    height: 5px;
-    width: 86px;
-    background-color:   #e7717d;
-    right: -89px;
-    bottom: 10px;
+.step {
+  text-align: center;
 }
-#personalForm{
-    margin: 0px auto;
-    width: 70%;
+.step-text {
+  margin-bottom: 10px;
+  color: #e7717d;
 }
-#personalBtn{
-    
+.bullet {
+  background-color: aliceblue;
+  border-radius: 50%;
+  border: 1px solid #e7717d;
+  width: 35px;
+  height: 30px;
+  color: #e7717d;
+  display: inline-block;
+  position: relative;
+  transition: background-color 500ms;
+  line-height: 30px;
 }
-#inputPersonalInfo{
-    background-color: #afd275;
-    margin: 0 auto;
-    width: 70%;
-    padding: 20px;
-    margin-bottom: 10px;
-    border: solid #afd275;
-    border-radius: 20px;
+.bullet.completed {
+  color: white;
+  background-color: #e7717d;
+}
+.bullet.completed::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 86px;
+  background-color: #e7717d;
+  right: -89px;
+  bottom: 10px;
+}
+#personalForm {
+  margin: 0 auto;
+  width: 800px;
+}
+#personalBtn {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.print-area {
+  background-color: #afd275;
+  margin: 0 auto;
+  width: 80%;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  border: solid #afd275;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.print_reservation {
+  width: 550px;
+}
+.print_personal {
+  width: 550px;
 }
 .print {
-	display:none
+  display: none;
 }
- @media print {
-	.print {display:block}
-	#printBtn {display:none;}
-    body * {
-        visibility: hidden;
-      }
-      #inputPersonalInfo * {
-        visibility: visible;
-      }
-      #inputPersonalInfo {
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
+
+#services_accordion {
+  background-color: #e7717d;
+  margin: 0 auto;
+  width: 800px;
+}
+#reservation-p2-header {
+  background-color: #c2cad0;
+  text-align: center;
+  margin: 0 auto;
+  font-size: x-large;
+}
+.accordion-item {
+  padding: 0;
+}
+.services-checkbox {
+  margin: 15px auto;
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.ser-checkbox {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  height: 240px;
+  padding: 10px;
+}
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+.accordion-body {
+  background-color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+.accordion-header {
+  height: 55px;
+}
+
+.extraServices {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+@media print {
+  .print {
+    display: block;
+  }
+  #printBtn {
+    display: none;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #inputPersonalInfo * {
+    visibility: visible;
+  }
+  #inputPersonalInfo {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .extra_service {
+    width: 100%;
+  }
+  #personalForm {
+    width: 95%;
+  }
+
+  #inputPersonalInfo {
+    width: 95%;
+  }
 }
