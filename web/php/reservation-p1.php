@@ -106,8 +106,8 @@
                 $this->totalPrice = $corrPrice * $this->price * $diffNight;
                 echo '<b>Daily price for '.$this->name.' room is '.$this->price.' Euro</b><br>';
                 echo '<b>For you '.$this->roomNumber.' Rooms are requiered</b><br>';
-                echo '<b>you have selected '.$diffNight.' days</b><br>';
-                echo '<b>Total price for this room for '.$diffNight.' days is: '.$this->totalPrice. ' euro</b><br>';
+                echo '<b>you have selected '.$diffNight.' nights</b><br>';
+                echo '<b>Total price for this room for '.$diffNight.' nights is: '.$this->totalPrice. ' euro</b><br>';
             }
           }
 
@@ -135,6 +135,7 @@
     </div>
     <p id="roomSelectionPart" class="describe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, hic recusandae. Optio eaque inventore laudantium, amet magni illum est aperiam quod 
         consequatur voluptatum. Quas nam aspernatur enim, doloribus dolorum dolor.</p>
+    <form method="post" action="reservation-p2.php">
         <div class="content">
             <div class="row">
                 <!-- Left side article 1 -->
@@ -160,7 +161,7 @@
                             }
                             ?>
                         </p>
-                        <button id="selectClassicSingle" class="btn btn-primary" onclick="roomsOnClick1()">Select This Room</button>
+                        <input type="submit" name="button1" id="selectClassicSingle" class="btn btn-primary" value="Select This Room">
                     </article>
 
                 </div>
@@ -197,7 +198,8 @@
                             }
                             ?>
                         </p>
-                        <button id="selectStandardDouble" class="btn btn-primary" onclick="roomsOnClick2()">Select This Room</button>
+                        <form method="post">                       
+                        <input type="submit" name="button2" id="selectStandardDouble" class="btn btn-primary" value="Select This Room">
                     </article>
                 </div>
                 <!-- Right side image 1 -->
@@ -231,8 +233,9 @@
                                 $classicTwins->calculator($corrPrice, $corrRoom, $diffNight);
                             }
                             ?>
-                        </p>                       
-                        <button id="selectClassicTwins" class="btn btn-primary" onclick="roomsOnClick3()">Select This Room</button>
+                        </p>
+                        <input type="submit" name="button3" id="selectClassicTwins" class="btn btn-primary" value="Select This Room">
+                        
                     </article>
                 </div>
                 <!-- Right side image 1 -->
@@ -243,7 +246,7 @@
                 </div>
             </div>
         </div>
-
+    </form>
 </main>
     
 
@@ -255,61 +258,45 @@
 
     <?php // try to disabled the select room before we choose a date 
     if (is_null($_SESSION['start-date']) || is_null($_SESSION['end-date'])){
-                                echo "<script>
-                                selectClassicSingle.disabled = true;
-                                selectClassicTwins.disabled = true;
-                                selectStandardDouble.disabled = true;
-                                </script>";
-                            }else{                             
-                                echo "<script>
-                                selectClassicSingle.disabled = false;
-                                selectClassicTwins.disabled = false;
-                                selectStandardDouble.disabled = false;
-                                </script>";
-                            }
-                            ?>
+        echo "<script>
+        selectClassicSingle.disabled = true;
+        selectClassicTwins.disabled = true;
+        selectStandardDouble.disabled = true;
+        </script>";
+    }else{                             
+        echo "<script>
+        selectClassicSingle.disabled = false;
+        selectClassicTwins.disabled = false;
+        selectStandardDouble.disabled = false;
+        </script>";
+    }
+
+    #try to get data for a room when a room is selected
+    unset($_SESSION['totalprice']);
+    unset($_SESSION['roomName']);
+
+    if(isset($_POST['button1'])) { 
+        $_SESSION['totalprice']= $classicSingle->totalPrice;
+        $_SESSION['roomName'] = $classicSingle->name;
+    }elseif($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['button2'])){
+        $_SESSION['totalprice']= $classicTwins->totalPrice;
+        $_SESSION['roomName'] = $classicTwins->name;
+    }elseif($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['button3'])){
+        $_SESSION['totalprice']= $standardDouble->totalPrice;
+        $_SESSION['roomName'] = $standardDouble->name;
+    }  
+    ?>
+
     <script>
 
     //with select any rooms the total price is going to totalPrice js variable
-    const selectClassicSingle = document.getElementById('selectClassicSingle');
-    const selectClassicTwins = document.getElementById('selectClassicTwins');
-    const selectStandardDouble = document.getElementById('selectStandardDouble');
+//    const selectClassicSingle = document.getElementById('selectClassicSingle');
+//    const selectStandardDouble = document.getElementById('selectStandardDouble');
+//    const selectClassicTwins = document.getElementById('selectClassicTwins');
 
 
-    const startDate = document.getElementById('start-date').value;
-    const endDate = document.getElementById('end-date').value;
-
-
-    function roomsOnClick1(){
-        document.location='reservation-p2.php'
-        <?php $_SESSION['totalprice']= $classicSingle->totalPrice;?> 
-
-    }
-
-//    selectClassicSingle.addEventListener('click' , () => {
-//           let totalPrice = <?php echo $classicSingle->totalPrice ?>;
-        
-        //here we are trying to pass totalPrice js variable to reservation-p3
-//        localStorage.setItem("totalPrice", totalPrice);
-//        window.document.location = "reservation-p3.php";
-//    })
-//    selectStandardDouble.addEventListener('click' , () => {
-//        let totalPrice = <?php echo $standardDouble->totalPrice ?>;
-//    })
-//    selectClassicTwins.addEventListener('click' , () => {
-//            let totalPrice = <?php echo $classicTwins->totalPrice ?>;
-//        })
-    
-
-//    if (startDate.value == '' || startDate.value ==null || endDate.value == '' || endDate.value ==null){
- //       selectClassicSingle.disabled = true;
-//        selectClassicTwins.disabled = true;
-//        selectStandardDouble.disabled = true;
-//    }else{
-//        selectClassicSingle.disabled = false;
-//        selectClassicTwins.disabled = false;
-//        selectStandardDouble.disabled = false;
-//    }
+//    const startDate = document.getElementById('start-date').value;
+//    const endDate = document.getElementById('end-date').value;
 
     </script>
 

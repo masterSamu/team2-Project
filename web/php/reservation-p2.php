@@ -51,8 +51,8 @@
       <div id="date-rsault">
         <?php
         session_start();
-        echo $_SESSION['totalprice'];?>
-        
+        ?>
+
         <p><?php echo 'Start date: '.$_SESSION['start-date'].' ' ;?><p>
         <p><?php echo 'End date: '.$_SESSION['end-date'].'<br>' ; ?><p>
         <p><?php echo 'Number of adults: '.$_SESSION['adualts-number'].'<br> '; ?><p>

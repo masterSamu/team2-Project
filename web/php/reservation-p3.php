@@ -115,6 +115,8 @@
                     <p><?php echo '<b>Number of adults: </b>'.$_SESSION['adualts-number'].''; ?><p>
                     <p><?php echo '<b>Number of childeren: </b>'.$_SESSION['child-number'].'' ; ?><p>
                     <p><?php echo '<b>Price for Rooms: </b>'.$_SESSION['totalprice'].' euro'; ?><p>
+                    <p><?php echo '<b>Type of room: </b>'.$_SESSION['roomName'].''; ?><p>
+
                     <?php 
                     $final_price = 0;
 
@@ -187,9 +189,6 @@
     <?php include 'Footer.php'; ?>
 <script>
 
-    #trying to get a totalPrice variable from reservation-p1
-   let totalPrice = localStorage.getItem("totalPrice");
-   //alert(totalPrice);
 </script>
 </body>
 </html>
