@@ -33,7 +33,7 @@
                     <button id="previousBtn">Previous</button>
                 </a>
                 <a href="home.php" >
-                    <button id="finishBtn">Finish</button>
+                    <button type="submit" id="finishBtn" action="reservation-create.php">Finish</button>
                 </a>
             </div>
         </div>
@@ -174,6 +174,35 @@
                     echo "<p><b>Email:</b> $inputEmail</p>";
                     echo "<p><b>Date of Birth:</b> $inputBday</p>";
                     echo "<p><b>Country:</b> $inputCountry</p>";
+                    ?>
+                    <?php 
+                    //create a sessions to pass all data to reservation-create.php for insert to database
+                    // PERSONAL INFO
+                    $_SESSION['name']=$inputName;
+                    $_SESSION['family']=$inputFamily;
+                    $_SESSION['email']=$inputEmail;
+                    $_SESSION['bDay']=$bDay;
+                    $_SESSION['country']=$inputCountry;
+
+                    // RESERVATION INFO - comment sessions are available in this page - it is not need to define again
+                    $_SESSION['finalPrice'] = $final_price;
+                    $_SESSION['exService1'] = $exService1;
+                    $_SESSION['exService2'] = $exService2;
+                    $_SESSION['exService3'] = $exService3;
+                    $exService1 = $_POST["service1"];
+                    $exService2 = $_POST["service2"];
+                    $exService3 = $_POST["service3"];
+
+                    //$_SESSION['start-date'];
+                    //$_SESSION['end-date'];
+                    //$_SESSION['adualts-number'];
+                    //$_SESSION['child-number'];
+                    //$_SESSION['roomName'];
+
+
+
+
+
 
 
                     ?>

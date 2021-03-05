@@ -8,6 +8,7 @@
   $customCssCode = '<link href="reservation-style.css" rel="stylesheet">';
 
   include 'header.php';
+  include 'function-call-res.php';
 ?>
 <div class="reservation-header">
     <div id="progressPlan" class="container2">
@@ -161,7 +162,7 @@
                             }
                             ?>
                         </p>
-                        <input type="submit" name="button1" id="selectClassicSingle" class="btn btn-primary" value="Select This Room">
+                        <input type="submit" name="button1" id="selectClassicSingle" class="btn btn-primary" value="Select This Room" onclick="clickNumb1()"/>
                     </article>
 
                 </div>
@@ -198,8 +199,8 @@
                             }
                             ?>
                         </p>
-                        <form method="post">                       
-                        <input type="submit" name="button2" id="selectStandardDouble" class="btn btn-primary" value="Select This Room">
+                                               
+                        <input type="submit" name="button2" id="selectStandardDouble" class="btn btn-primary" value="Select This Room"onclick="clickNumb2()"/>
                     </article>
                 </div>
                 <!-- Right side image 1 -->
@@ -234,7 +235,7 @@
                             }
                             ?>
                         </p>
-                        <input type="submit" name="button3" id="selectClassicTwins" class="btn btn-primary" value="Select This Room">
+                        <input type="submit" name="button3" id="selectClassicTwins" class="btn btn-primary" value="Select This Room" onclick="clickNumb3()"/>
                         
                     </article>
                 </div>
@@ -271,20 +272,6 @@
         </script>";
     }
 
-    #try to get data for a room when a room is selected
-    unset($_SESSION['totalprice']);
-    unset($_SESSION['roomName']);
-
-    if(isset($_POST['button1'])) { 
-        $_SESSION['totalprice']= $classicSingle->totalPrice;
-        $_SESSION['roomName'] = $classicSingle->name;
-    }elseif($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['button2'])){
-        $_SESSION['totalprice']= $classicTwins->totalPrice;
-        $_SESSION['roomName'] = $classicTwins->name;
-    }elseif($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['button3'])){
-        $_SESSION['totalprice']= $standardDouble->totalPrice;
-        $_SESSION['roomName'] = $standardDouble->name;
-    }  
     ?>
 
     <script>
