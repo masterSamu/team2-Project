@@ -51,6 +51,21 @@
       <div id="date-rsault">
         <?php
         session_start();
+
+        if ($_POST['button1']=="Select Classic Single"){
+          $_SESSION['room'] = 1;
+        }elseif($_POST['button2']=="Select Standard Double"){
+          $_SESSION['room'] = 2;
+        }elseif($_POST['button3']=="Select Classic Twins"){
+          $_SESSION['room'] = 3;
+
+        }
+        
+        echo $_POST['button1'];
+        echo $_POST['button2'];
+        echo $_POST['button3'];
+        
+
         ?>
 
         <p><?php echo 'Start date: '.$_SESSION['start-date'].' ' ;?><p>
