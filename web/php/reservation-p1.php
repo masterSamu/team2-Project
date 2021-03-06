@@ -8,6 +8,8 @@
   $customCssCode = '<link href="reservation-style.css" rel="stylesheet">';
 
   include 'header.php';
+  include 'function-call-res.php';
+  include 'room-class.php'
 ?>
 <div class="reservation-header">
     <div id="progressPlan" class="container2">
@@ -42,11 +44,11 @@
             <div class="date-selection">
                 <div class="input-start-date">
                     <label for="start-date">Arriving date</label>
-                    <input id="start-date" type="date" name="start-date" class="form-control select-date" required>
+                    <input id="start-date" type="date" min="<?php echo date('Y-m-d');?>" name="start-date" class="form-control select-date" required>
                 </div>
                 <div class="input-end-date">
                     <label for="end-date">Departure date</label>
-                    <input type="date" id="end-date" name="end-date" class="form-control select-date" required>
+                    <input type="date" id="end-date" min="<script></script>" name="end-date" class="form-control select-date" required>
                 </div>
             </div>
             <div class="person-selection">
@@ -84,51 +86,25 @@
         # create a corrolation which is going to calculate the number of rooms
         $corrRoom = $adult + $child ;
 
-        #create a class for rooms
-        class Room {
-            // Properties
-            public $name;
-            public $price;
-            public $capacity;
-            public $roomNumber;
-            public $totalPrice;
-            
-            # this is a constructor
-            function __construct(string $name ,int $price , int $capacity) {
-                $this->name = $name;
-                $this->price = $price;
-                $this->capacity = $capacity;
+        $_SESSION['corrPrice'] = $corrPrice;
+        $_SESSION['corrRoom'] = $corrRoom;
+        $_SESSION['diffNight'] = $diffNight;
 
-              }
-            # This method is calculate the price and number of rooms for specific room and number of persons
-            function calculator($corrPrice , $corrRoom , $diffNight ) {
-                $this->roomNumber = round($corrRoom/$this->capacity);
-                $this->totalPrice = $corrPrice * $this->price * $diffNight;
-                echo '<b>Daily price for '.$this->name.' room is '.$this->price.' Euro</b><br>';
-                echo '<b>For you '.$this->roomNumber.' Rooms are requiered</b><br>';
-                echo '<b>you have selected '.$diffNight.' days</b><br>';
-                echo '<b>Total price for this room for '.$diffNight.' days is: '.$this->totalPrice. ' euro</b><br>';
-            }
-          }
-
-          # Here we are creating objects for each room 
- 
-
-          # Check for holidays, in holidays the prices is 1.5*roomPrice
-          $startHolidays = new DateTime('2021-12-15');
-          $endHolidays = new DateTime('2022-01-15');
-
-          if ($startDate>= $startHolidays && $endDate>= $endHoliday){
+        # Here we are creating objects for each room 
+        # Check for holidays, in holidays the prices is 1.5*roomPrice
+        $_SESSION['startHolidays']= $startHolidays;
+        $_SESSION['endHolidays'] = $endHolidays;
+        if ($startDate >= $startHolidays && $endDate<= $endHolidays){
             echo "Your date is in holidays";
             $classicSingle = new Room("Classic Single", 1.5*40 , 1);
             $standardDouble = new Room("Standard Double", 1.5*70 , 2); 
             $classicTwins = new Room("Classic Twins", 1.5*75 , 2);
-          }else{
+        }else{
             $classicSingle = new Room("Classic Single", 40 , 1);
             $standardDouble = new Room("Standard Double", 70 , 2); 
             $classicTwins = new Room("Classic Twins", 75 , 2);
+        }
 
-          }
     
     ?>
 
@@ -154,13 +130,17 @@
                                 echo "<b>Fill the dates to claculate the prices</b>";
 
                             }else{
-                                # using the calculator function to calculate and print the price and number of rooms
+                                # using the calculator() function to calculate the number of rooms and prices
                                 $classicSingle->calculator($corrPrice, $corrRoom, $diffNight);
-                                
+
+                                # use printCal() function to print resaults
+                                $classicSingle->printCal();
                             }
                             ?>
                         </p>
-                        <button id="selectClassicSingle" class="btn btn-primary" onclick="roomsOnClick1()">Select This Room</button>
+                        <form method="post" name="room1" action="reservation-p2.php">
+                            <input type="submit" name="button1" id="selectClassicSingle" class="btn btn-primary" value= "<?php echo"Select ".$classicSingle->name ?>" />
+                        </form>
                     </article>
 
                 </div>
@@ -192,12 +172,18 @@
                                 echo "<b>Fill the dates to claculate the prices</b>";
 
                             }else{
-                                # using the calculator function to calculate and print the price and number of rooms
+                                # using the calculator() function to calculate the number of rooms and prices
                                 $standardDouble->calculator($corrPrice, $corrRoom, $diffNight);
+
+                                # use printCal() function to print resaults
+                                $standardDouble->printCal();
+
                             }
                             ?>
                         </p>
-                        <button id="selectStandardDouble" class="btn btn-primary" onclick="roomsOnClick2()">Select This Room</button>
+                        <form method="post" name="room2" action="reservation-p2.php">                     
+                            <input type="submit" name="button2" id="selectStandardDouble" class="btn btn-primary" value= "<?php echo"Select ".$standardDouble->name?>"/>
+                        </form>
                     </article>
                 </div>
                 <!-- Right side image 1 -->
@@ -227,12 +213,17 @@
                             if (is_null($_SESSION['start-date']) || is_null($_SESSION['end-date'])){
                                 echo "<b>Fill the dates to claculate the prices</b>";
                             }else{
-                                # using the calculator function to calculate and print the price and number of rooms
+                                # using the calculator() function to calculate the number of rooms and prices
                                 $classicTwins->calculator($corrPrice, $corrRoom, $diffNight);
+
+                                # use printCal() function to print resaults
+                                $classicTwins->printCal();
                             }
                             ?>
-                        </p>                       
-                        <button id="selectClassicTwins" class="btn btn-primary" onclick="roomsOnClick3()">Select This Room</button>
+                        </p>
+                        <form method="post" name="room3" action="reservation-p2.php">
+                            <input type="submit" name="button3" id="selectClassicTwins" class="btn btn-primary" value= "<?php echo"Select ".$classicTwins->name?>"/>
+                        </form>
                     </article>
                 </div>
                 <!-- Right side image 1 -->
@@ -243,7 +234,6 @@
                 </div>
             </div>
         </div>
-
 </main>
     
 
@@ -255,61 +245,49 @@
 
     <?php // try to disabled the select room before we choose a date 
     if (is_null($_SESSION['start-date']) || is_null($_SESSION['end-date'])){
-                                echo "<script>
-                                selectClassicSingle.disabled = true;
-                                selectClassicTwins.disabled = true;
-                                selectStandardDouble.disabled = true;
-                                </script>";
-                            }else{                             
-                                echo "<script>
-                                selectClassicSingle.disabled = false;
-                                selectClassicTwins.disabled = false;
-                                selectStandardDouble.disabled = false;
-                                </script>";
-                            }
-                            ?>
+        echo "<script>
+        selectClassicSingle.disabled = true;
+        selectClassicTwins.disabled = true;
+        selectStandardDouble.disabled = true;
+        </script>";
+    }else{                             
+        echo "<script>
+        selectClassicSingle.disabled = false;
+        selectClassicTwins.disabled = false;
+        selectStandardDouble.disabled = false;
+        </script>";
+    }
+
+    ?>
+
     <script>
-
-    //with select any rooms the total price is going to totalPrice js variable
-    const selectClassicSingle = document.getElementById('selectClassicSingle');
-    const selectClassicTwins = document.getElementById('selectClassicTwins');
-    const selectStandardDouble = document.getElementById('selectStandardDouble');
-
-
     const startDate = document.getElementById('start-date').value;
     const endDate = document.getElementById('end-date').value;
 
+    // create a variable for today
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+    today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("start-date").setAttribute(min, today);
 
-    function roomsOnClick1(){
-        document.location='reservation-p2.php'
-        <?php $_SESSION['totalprice']= $classicSingle->totalPrice;?> 
+
+    //with select any rooms the total price is going to totalPrice js variable
+//    const selectClassicSingle = document.getElementById('selectClassicSingle');
+//    const selectStandardDouble = document.getElementById('selectStandardDouble');
+//    const selectClassicTwins = document.getElementById('selectClassicTwins');
+
+    function clickNumb(roomNumber){
 
     }
 
-//    selectClassicSingle.addEventListener('click' , () => {
-//           let totalPrice = <?php echo $classicSingle->totalPrice ?>;
-        
-        //here we are trying to pass totalPrice js variable to reservation-p3
-//        localStorage.setItem("totalPrice", totalPrice);
-//        window.document.location = "reservation-p3.php";
-//    })
-//    selectStandardDouble.addEventListener('click' , () => {
-//        let totalPrice = <?php echo $standardDouble->totalPrice ?>;
-//    })
-//    selectClassicTwins.addEventListener('click' , () => {
-//            let totalPrice = <?php echo $classicTwins->totalPrice ?>;
-//        })
-    
-
-//    if (startDate.value == '' || startDate.value ==null || endDate.value == '' || endDate.value ==null){
- //       selectClassicSingle.disabled = true;
-//        selectClassicTwins.disabled = true;
-//        selectStandardDouble.disabled = true;
-//    }else{
-//        selectClassicSingle.disabled = false;
-//        selectClassicTwins.disabled = false;
-//        selectStandardDouble.disabled = false;
-//    }
 
     </script>
 

@@ -51,8 +51,24 @@
       <div id="date-rsault">
         <?php
         session_start();
-        echo $_SESSION['totalprice'];?>
+
+        if ($_POST['button1']=="Select Classic Single"){
+          $_SESSION['room'] = 1;
+        }elseif($_POST['button2']=="Select Standard Double"){
+          $_SESSION['room'] = 2;
+        }elseif($_POST['button3']=="Select Classic Twins"){
+          $_SESSION['room'] = 3;
+        }else{
+          pass;
+        }
         
+        echo $_POST['button1'];
+        echo $_POST['button2'];
+        echo $_POST['button3'];
+        
+
+        ?>
+
         <p><?php echo 'Start date: '.$_SESSION['start-date'].' ' ;?><p>
         <p><?php echo 'End date: '.$_SESSION['end-date'].'<br>' ; ?><p>
         <p><?php echo 'Number of adults: '.$_SESSION['adualts-number'].'<br> '; ?><p>
@@ -78,7 +94,7 @@
           </div>
           <div class="col-md-4">
               <label for="inputBday" class="form-label">Date of birth</label>
-              <input type="date" class="form-control" id="inputBday" name="inputBday" required>
+              <input type="date" class="form-control" id="inputBday" max="<?php echo date('Y-m-d');?>" name="inputBday" required>
           </div>
           <div class="col-5">
               <label for="inputCountry" class="form-label">Country</label>
