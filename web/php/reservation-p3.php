@@ -89,9 +89,6 @@
                 </div>
             </form>
         </div>                            
-      
-    <p class="describe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, hic recusandae. Optio eaque inventore laudantium, amet magni illum est aperiam quod 
-        consequatur voluptatum. Quas nam aspernatur enim, doloribus dolorum dolor.</p>
 
             <?php 
             $inputName = $_POST["inputName"];
@@ -217,40 +214,35 @@
                     echo "<p><b>Date of Birth:</b> $inputBday</p>";
                     echo "<p><b>Country:</b> $inputCountry</p>";
                     ?>
-                    <?php 
-                    //create a sessions to pass all data to reservation-create.php for insert to database
-                    // PERSONAL INFO
-                    $_SESSION['name']=$inputName;
-                    $_SESSION['family']=$inputFamily;
-                    $_SESSION['email']=$inputEmail;
-                    $_SESSION['bDay']=$bDay;
-                    $_SESSION['country']=$inputCountry;
 
-                    // RESERVATION INFO - comment sessions are available in this page - it is not need to define again
-                    $_SESSION['finalPrice'] = $final_price;
-                    $_SESSION['exService1'] = $exService1;
-                    $_SESSION['exService2'] = $exService2;
-                    $_SESSION['exService3'] = $exService3;
-
-                    //$_SESSION['start-date'];
-                    //$_SESSION['end-date'];
-                    //$_SESSION['adualts-number'];
-                    //$_SESSION['child-number'];
-                    //$_SESSION['roomName'];
-
-
-
-
-
-
-
-                    ?>
                     <div id="printBtn" class="col-12">
-                        <button onclick="javascript:window.print()" type="submit" class="btn btn-primary" href="#">Print</button>
+                        <button id="printButton" onclick="javascript:window.print()" type="submit" class="btn btn-primary" href="#">Print Reservatio Detail</button>
                     </div>
                 </div>
             </div>
         
+
+    <?php 
+    //create a sessions to pass all data to reservation-create.php for insert to database
+    // PERSONAL INFO
+    $_SESSION['name']=$inputName;
+    $_SESSION['family']=$inputFamily;
+    $_SESSION['email']=$inputEmail;
+    $_SESSION['bDay']=$bDay;
+    $_SESSION['country']=$inputCountry;
+
+    // RESERVATION INFO - comment sessions are available in this page - it is not need to define again
+    $_SESSION['finalPrice'] = $final_price;
+    $_SESSION['exService1'] = $exService1;
+    $_SESSION['exService2'] = $exService2;
+    $_SESSION['exService3'] = $exService3;
+
+    //$_SESSION['start-date'];
+    //$_SESSION['end-date'];
+    //$_SESSION['adualts-number'];
+    //$_SESSION['child-number'];
+    //$_SESSION['roomName'];
+    ?>
 </main>
         
     <!-- Include footer from footer.php file -->

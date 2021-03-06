@@ -58,7 +58,8 @@
           $_SESSION['room'] = 2;
         }elseif($_POST['button3']=="Select Classic Twins"){
           $_SESSION['room'] = 3;
-
+        }else{
+          pass;
         }
         
         echo $_POST['button1'];
@@ -93,7 +94,7 @@
           </div>
           <div class="col-md-4">
               <label for="inputBday" class="form-label">Date of birth</label>
-              <input type="date" class="form-control" id="inputBday" name="inputBday" required>
+              <input type="date" class="form-control" id="inputBday" max="<?php echo date('Y-m-d');?>" name="inputBday" required>
           </div>
           <div class="col-5">
               <label for="inputCountry" class="form-label">Country</label>
