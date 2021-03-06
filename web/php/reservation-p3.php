@@ -216,7 +216,7 @@
                     ?>
 
                     <div id="printBtn" class="col-12">
-                        <button id="printButton" onclick="javascript:window.print()" type="submit" class="btn btn-primary" href="#">Print Reservatio Detail</button>
+                        <button id="printButton" onclick="javascript:window.print()" type="submit" class="btn btn-primary" href="#">Print Reservation Details</button>
                     </div>
                 </div>
             </div>
