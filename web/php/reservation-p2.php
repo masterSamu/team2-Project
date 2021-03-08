@@ -96,9 +96,13 @@
               <label for="inputBday" class="form-label">Date of birth</label>
               <input type="date" class="form-control" id="inputBday" max="<?php echo date('Y-m-d');?>" name="inputBday" required>
           </div>
-          <div class="col-5">
+          <div class="col-6">
               <label for="inputCountry" class="form-label">Country</label>
               <input type="text" class="form-control" id="inputCountry" placeholder="Country" name="inputCountry" pattern="[a-zA-Z]{2,}" title="Please enter your country">
+          </div>
+          <div class="col-6">
+              <label for="inputPhone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="inputPhone" placeholder="exp : 0405124521" name="inputPhone" title="Please enter your Phone number">
           </div>
 
           <div class="extraServices" id="extraservices">
