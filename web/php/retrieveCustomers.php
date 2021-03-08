@@ -5,8 +5,8 @@ include '../database.php';
 $sql = "SELECT * FROM customers";
 $result = $conn->query($sql);
 
+
 $customerArray = array();
-$resultArray = array();
 if ($result ->num_rows > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         $customerArray[$row["customer_id"]] = array(
@@ -19,13 +19,11 @@ if ($result ->num_rows > 0) {
             'country' => $row["country"],
             'created_at' => $row["created_at"]
             );
-        /*array_push($customerArray, $resultArray);
-        array_pop($resultArray);*/
     }
-
+    $isCustomers = true;
 
 } else {
-    echo "there is no customers";
+    $isCustomers = false;
 }
 
 // Free result set
