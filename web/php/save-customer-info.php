@@ -2,16 +2,18 @@
 // This php file will save customer information to database
 include 'database.php';
 
-$fname = $_POST['fname'];
-$lname = $_POST['lname'];
-$email = $_POST['email'];
-$tel = $_POST['tel'];
-$bdate = $_POST['bdate'];
+$fname = strtolower($_POST['fname']);
+$lname = strtolower($_POST['lname']);
+$email = strtolower($_POST['email']);
+$tel = strtolower($_POST['tel']);
+$bdate = strtolower($_POST['bdate']);
+$country = strtolower($_POST['country']);
 
 if (empty($fname) || empty($lname) || empty($email) || empty($tel) || empty($bdate)) {
-    // mark empty fields
+    echo "unvalid input";
 } else {
-    $sql ="INSERT INTO customers (fname, lname, email, tel, bdate) VALUES 
+    if (empty($country)) {
+        $sql ="INSERT INTO customers (fname, lname, email, tel, bdate) VALUES 
         (
         '$fname',
         '$lname',
@@ -19,10 +21,21 @@ if (empty($fname) || empty($lname) || empty($email) || empty($tel) || empty($bda
         '$tel',
         '$bdate'
         )";
+    } else {
+        $sql ="INSERT INTO customers (fname, lname, email, tel, bdate, country) VALUES 
+        (
+        '$fname',
+        '$lname',
+        '$email',
+        '$tel',
+        '$bdate',
+        '$country'
+        )";
+    }
+    
 
     if ($conn->query($sql) === TRUE) {
-        // When query is submitted, move to homepage
-        header('Location: home.php');
+        // When query is submitted
     } else {
         echo "error: " . $sql. "<br>". $conn->error;
     }
