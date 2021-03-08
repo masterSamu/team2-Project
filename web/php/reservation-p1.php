@@ -261,34 +261,16 @@
     ?>
 
     <script>
-    const startDate = document.getElementById('start-date').value;
     const endDate = document.getElementById('end-date').value;
 
-    // create a variable for today
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0!
-    var yyyy = today.getFullYear();
-    if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
-    today = yyyy+'-'+mm+'-'+dd;
-    document.getElementById("start-date").setAttribute(min, today);
+    document.getElementById("start-date").addEventListener("change", function() {
+    var startDate = this.value;
+    //console.log(input); //e.g. 2015-11-13
 
+    // Add the start date as a value of min in end date
+    document.getElementById('end-date').min = startDate;
 
-    //with select any rooms the total price is going to totalPrice js variable
-//    const selectClassicSingle = document.getElementById('selectClassicSingle');
-//    const selectStandardDouble = document.getElementById('selectStandardDouble');
-//    const selectClassicTwins = document.getElementById('selectClassicTwins');
-
-    function clickNumb(roomNumber){
-
-    }
-
-
+    });
     </script>
 
 </body>
