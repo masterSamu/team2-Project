@@ -76,7 +76,7 @@ button {
   color: #e7717d;
   border: 1px solid #e7717d;
   transition: 0.5s background-color;
-  margin: 20px auto 20px auto;
+  margin: 10px auto 20px auto;
 }
 button:hover {
   cursor: pointer;
@@ -137,23 +137,27 @@ button:disabled:hover {
   margin: 0 auto;
   width: 200px;
 }
-
+.form-check {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 .print-area {
   background-color: #afd275;
   margin: 0 auto;
-  width: 80%;
-  padding: 0px 10px;
+  width: 90%;
+  padding: 20px 10px;
   margin-bottom: 10px;
   border: solid #afd275;
-  border-radius: 15px;
+  border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 .print_reservation {
-  width: 550px;
+  width: 500px;
 }
 .print_personal {
-  width: 550px;
+  width: 500px;
 }
 .print {
   display: none;
