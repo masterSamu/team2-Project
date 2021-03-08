@@ -33,7 +33,7 @@
                 <a href="reservation-p2.php" >
                     <button id="previousBtn">Previous</button>
                 </a>
-                <a href="home.php" >
+                <a href="reservation-create.php" >
                     <button type="submit" id="finishBtn" action="reservation-create.php">Finish</button>
                 </a>
             </div>
@@ -235,7 +235,7 @@
     $_SESSION['name']=$inputName;
     $_SESSION['family']=$inputFamily;
     $_SESSION['email']=$inputEmail;
-    $_SESSION['bDay']=$bDay;
+    $_SESSION['bDay']=$inputBday;
     $_SESSION['country']=$inputCountry;
     $_SESSION['inputPhone']= $inputPhone;
 
@@ -257,6 +257,9 @@
     <!-- Include footer from footer.php file -->
     <?php include 'Footer.php'; ?>
 <script>
+document.getElementById("finishBtn").addEventListener("click", function(){
+    document.location.href = 'reservation-create.php';
+});
 
 </script>
 </body>

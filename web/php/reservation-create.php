@@ -20,19 +20,15 @@ $adultNum = $_SESSION['adualts-number'];
 $childNum = $_SESSION['child-number'];
 $roomType = $_SESSION['roomName'];
 
-// Check if customer already exist in customer table
-include 'retrieveCusomers';
-    if (in_array($email, $customerArray)) {
-        // don't do anything, because customer already exist in table
-    } else {
-        // add customer information into table
-        $sqlcustomers="INSERT INTO customers (fname, lname, email, tel, bdate, country)
-        VALUES ('$name', '$family', '$email', '$phone', '$bDay' '$country' )";
-    }
+
+// insert data to res_customers table in database
+$sqlcustomers="INSERT INTO customers (fname, lname, email, tel, bdate, country)
+VALUES ('$name', '$family', '$email', '$phone', '$bDay', '$country')";
 
 // insert data to reservation table in database
-$sqlreservation="INSERT INTO reservation (arrive_date, departure_date, adults_num, child_num, extra_services, room_type, total_price)
-VALUES ('$startDate', '$endtDate', '$adultNum', '$childNum', '($exService3,$exService3,$exService3)', '$roomType', '$finalPrice')";
+$sqlreservation="INSERT INTO reservation (name, family, arrive_date, departure_date, adults_num, child_num, extra_services, room_type, total_price)
+VALUES ('$name', '$family', '$startDate', '$endtDate', '$adultNum', '$childNum', '($exService1,$exService2,$exService3)', '$roomType', '$finalPrice')";
+
 
 if($conn->query($sqlcustomers) === TRUE && $conn->query($sqlreservation) === TRUE) {
 
@@ -48,3 +44,6 @@ else
 $conn->close();
 
 ?>
+<br><a href="home.php" >
+    <button type="submit" id="homeBtn" action="home.php">Return to home page</button>
+</a>
