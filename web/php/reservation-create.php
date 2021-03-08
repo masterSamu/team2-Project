@@ -7,6 +7,7 @@ $family = $_SESSION['family'];
 $email = $_SESSION['email'];
 $bDay = $_SESSION['bDay'];
 $country = $_SESSION['country'];
+$phone = $_SESSION['inputPhone'];
 
 // RESERVATION INFO - comment sessions are available in this page - it is not need to define again
 $exService1 = $_SESSION['exService1'];
@@ -21,8 +22,8 @@ $roomType = $_SESSION['roomName'];
 
 
 // insert data to res_customers table in database
-$sqlcustomers="INSERT INTO res_customers (name, family, email, country)
-VALUES ('$name', '$family', '$email', '$country' )";
+$sqlcustomers="INSERT INTO customers (fname, lname, email, tel, country)
+VALUES ('$name', '$family', '$email',$phone '$country' )";
 
 // insert data to reservation table in database
 $sqlreservation="INSERT INTO reservation (name, family, arrive_date, departure_date, adults_num, child_num, extra_services, room_type, total_price)

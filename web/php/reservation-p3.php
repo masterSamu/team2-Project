@@ -96,10 +96,13 @@
             $inputEmail = $_POST["inputEmail"];
             $inputBday = $_POST["inputBday"];
             $inputCountry = $_POST["inputCountry"];
-            
+            $inputPhone = $_POST["inputPhone"];
+
             $exService1 = $_POST["service1"];
             $exService2 = $_POST["service2"];
             $exService3 = $_POST["service3"];
+
+            # defaulr price for extra services
             $exService1Price = 30;
             $exService2Price = 50;
             $exService3Price = 45;
@@ -185,20 +188,20 @@
                         echo "<p><b>Your extra services are: </b></p><ul>
                         <li>$exService1 - price : $exService1Price euro</li>
                         <li>$exService3 - price : $exService3Price euro</li></ul>";
-                        $final_price = $_SESSION['totalprice']+$exService1Price+$exService3Price;
+                        $final_price = $totalprice+$exService1Price+$exService3Price;
 
                     }elseif(is_null($exService2)==False && is_null($exService3)==False && is_null($exService1)){
                         echo "<p><b>Your extra services are: </b></p><ul>
                         <li>$exService2 - price : $exService2Price euro</li>
                         <li>$exService3 - price : $exService3Price euro</li></ul>";
-                        $final_price = $_SESSION['totalprice']+$exService2Price+$exService3Price;
+                        $final_price = $totalprice+$exService2Price+$exService3Price;
 
                     }else{
                         echo "<p><b>Your extra services are: </b></p><ul>
                         <li>$exService1 - price : $exService1Price euro</li>
                         <li>$exService2 - price : $exService2Price euro</li>
                         <li>$exService3 - price : $exService3Price euro</li></ul>";
-                        $final_price = $_SESSION['totalprice']+$exService1Price+$exService2Price+$exService3Price;
+                        $final_price = $totalprice+$exService1Price+$exService2Price+$exService3Price;
 
                     }
                     ?>
@@ -208,11 +211,13 @@
                 <div class="print_personal">
                     <h4>your Personal Information</h4>
                     <?php
-                    echo "<p><b>Name:</b> $inputName</p>";
-                    echo "<p><b>Family:</b> $inputFamily</p>";
-                    echo "<p><b>Email:</b> $inputEmail</p>";
-                    echo "<p><b>Date of Birth:</b> $inputBday</p>";
-                    echo "<p><b>Country:</b> $inputCountry</p>";
+                    echo "<p><b>Name: </b> $inputName</p>";
+                    echo "<p><b>Family: </b> $inputFamily</p>";
+                    echo "<p><b>Email: </b> $inputEmail</p>";
+                    echo "<p><b>Date of Birth: </b> $inputBday</p>";
+                    echo "<p><b>Country: </b> $inputCountry</p>";
+                    echo "<p><b>Phone number: </b> $inputPhone</p>";
+
                     ?>
 
                     <div id="printBtn" class="col-12">
@@ -220,7 +225,9 @@
                     </div>
                 </div>
             </div>
-        
+            <div id="finish-describe">
+                <p>please click on <a href="#finishBtn">Finish</a> button to finalize your reservation</p>  
+            </div>
 
     <?php 
     //create a sessions to pass all data to reservation-create.php for insert to database
@@ -230,6 +237,8 @@
     $_SESSION['email']=$inputEmail;
     $_SESSION['bDay']=$bDay;
     $_SESSION['country']=$inputCountry;
+    $_SESSION['inputPhone']= $inputPhone;
+
 
     // RESERVATION INFO - comment sessions are available in this page - it is not need to define again
     $_SESSION['finalPrice'] = $final_price;
