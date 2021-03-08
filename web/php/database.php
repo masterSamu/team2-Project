@@ -1,7 +1,7 @@
 <?php
     // This php file creates a connection to database
 
-    $servername="localhost:3306";
+    $servername="localhost:3307";
     $username="testuser";
     $password="password";
     $dbname ="testuser";
