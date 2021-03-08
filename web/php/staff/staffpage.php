@@ -78,7 +78,7 @@
                                 <th>created_at</th>
                             </tr>
                             <?php
-                                include 'retrieveCustomers.php';
+                                include '../retrieveCustomers.php';
                                 foreach ($customerArray as $row) {
                                     echo '<tr>';
                                     foreach($row as $cell) {
@@ -86,8 +86,13 @@
                                     }
                                     echo '</tr>';
                                 }
+                                
+                            echo "</table>";
+                                // If there is no any customers
+                                if($isCustomers == false) {
+                                    echo "There is no customers";
+                                }
                             ?>
-                        </table>
                     </div>
                 </div>
             </div>
