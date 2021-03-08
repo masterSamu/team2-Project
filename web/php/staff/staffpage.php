@@ -238,6 +238,7 @@
                         );
                         
                         
+                    // Feedback chart 
                     echo '
                     <script>
                         window.onload = function () {
