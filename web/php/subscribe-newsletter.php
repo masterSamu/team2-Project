@@ -6,6 +6,8 @@
     
     if (empty($email)) {
         echo "Email field is empty";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email format";
     } else {
         $sql = "INSERT INTO subscriptions (email) VALUES ('$email');";
 
