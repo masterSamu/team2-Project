@@ -7,52 +7,71 @@
   $customCssCode = '<link href="contactform.css" rel="stylesheet">';
   include 'header.php';
 ?>
-
 <!-- Page Content-->
+<body>  
 
-<main>
-	<div class="row">
-          <div class="col-md-12">
-            <h1>Contact Form</h1>
-          </div>
-        </div>
+<?php
+// define variables and set to empty values
+$nameErr = $emailErr = $telErr = "";
+$name = $email = $comment = $tel = "";
 
-<!-- Contact information form for room reservation -->
-	<div class="container">
-	<form  id="res-page-cus-info-table" method="POST" action="save-customer-info.php">
-        <fieldset>
-            <legend align="center">Customer information</legend>
-            <table>
-                <tr>
-                    <td><label for="fname">First name:</label></td>
-                    <td><input type="text" id="fname" name="fname" required></td>
-                </tr>
-                <tr>
-                    <td><label for="lname">Last name:</label></td>
-                    <td><input type="text" id="lname" name="lname" required></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email:</label></td>
-                    <td><input type="email" if="email" name="email" required></td>
-                </tr>
-                <tr>
-                    <td><label for="tel">Phone number:</label></td>
-                    <td><input type="tel" id="tel" name="tel" required></td>
-                </tr>
-                <tr>
-                    <td><label for="bdate">Birth date:</label></td>
-                    <td><input type="date" id="bdate" name="bdate" value="" min="1900-01-01" max="2021-01-01" required></td>
-                </tr>
-		<!-- <tr>
-                    <td><label for="mes">Messages:</label></td>
-                    <td><input type="text" id="mes" name="mes"></td>
-                </tr> --!>
-	    </table>
-            <input type="submit" class="btn btn-primary" value="Submit">
-        </fieldset>
-    </form>
-        </div>
-        </main>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+  }
+    
+  if (empty($_POST["tel"])) {
+    $telErr = "Phone number is required";
+  } else {
+    $website = test_input($_POST["tel"]);
+  }
 
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+<div class="row">
+	<div class="col-md-12">
+            <center><h3>Contact Us</h3></center>
+	</div>
+</div>
+<div class="container">
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+  	    <p><label>Name:</label> <input type="text" name="name">
+  	        <span class="error">* <?php echo $nameErr;?></span></p>
+  	    <p><label>E-mail:</label> <input type="text" name="email">
+  	        <span class="error">* <?php echo $emailErr;?></span></p>
+  	    <p><label>Phone number: </label><input type="text" name="tel">
+  	        <span class="error">* <?php echo $telErr;?></span></p>
+  	    <p>
+            <label>Comment: </label><textarea name="comment" rows="5" cols="40"></textarea>
+        </p>
+        <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+	</form>
+</div>
+<div class=container>
+    <center><a href="home.php">
+        <button class="btn btn-primary">Back to homepage</button>
+    </a></center>
+</div>
+<script>
 <!-- Include footer from footer.php file -->
 <?php include 'Footer.php'; ?>
