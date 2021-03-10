@@ -29,6 +29,7 @@ VALUES ('$name', '$family', '$email', '$phone', '$bDay', '$country')";
 $sqlreservation="INSERT INTO reservation (name, family, arrive_date, departure_date, adults_num, child_num, extra_services, room_type, total_price)
 VALUES ('$name', '$family', '$startDate', '$endtDate', '$adultNum', '$childNum', '($exService1,$exService2,$exService3)', '$roomType', '$finalPrice')";
 
+
 if($conn->query($sqlcustomers) === TRUE && $conn->query($sqlreservation) === TRUE) {
 
     echo "New records added";
