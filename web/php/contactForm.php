@@ -7,6 +7,10 @@
   $customCssCode = '<link href="contactform.css" rel="stylesheet">';
   include 'header.php';
 ?>
+<head>
+    <link href="reservation-style.css" type="text/css" rel="stylesheet" href="css/datepicker.css">
+    <link href="reservation-style.css" type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+</head>
 <!-- Page Content-->
 <body>  
 
@@ -48,30 +52,30 @@ function test_input($data) {
   return $data;
 }
 ?>
+<main>
 <div class="row">
 	<div class="col-md-12">
-            <center><h3>Contact Us</h3></center>
+            <center><h1>Contact Us</h1></center>
 	</div>
 </div>
 <div class="container">
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  	    <p><label>Name:</label> <input type="text" name="name">
-  	        <span class="error">* <?php echo $nameErr;?></span></p>
-  	    <p><label>E-mail:</label> <input type="text" name="email">
-  	        <span class="error">* <?php echo $emailErr;?></span></p>
-  	    <p><label>Phone number: </label><input type="text" name="tel">
-  	        <span class="error">* <?php echo $telErr;?></span></p>
-  	    <p>
-            <label>Comment: </label><textarea name="comment" rows="5" cols="40"></textarea>
+	<form method="post" action="contact-Info.php">
+        <div class="col-md">
+  	        <label for="name">Name:</label> <input type="text" id="name" required></p>
+        </div>
+        <div class="col-md">
+  	        <label for="email">Email:</label> <input type="text" id="email" required></p>
+        </div>
+        <div class="col-md">
+  	        <label for="tele">Phone number:</label> <input type="tel" id="tele" required></p>
+        </div>
+        <div class="col-md">
+            <label for="">Messages:</label> <textarea id="mes" required></textarea>
         </p>
+        </div>
         <input type="submit" name="submit" value="Submit" class="btn btn-primary">
 	</form>
 </div>
-<div class=container>
-    <center><a href="home.php">
-        <button class="btn btn-primary">Back to homepage</button>
-    </a></center>
-</div>
-<script>
+</main>
 <!-- Include footer from footer.php file -->
 <?php include 'Footer.php'; ?>
