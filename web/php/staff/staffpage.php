@@ -38,14 +38,16 @@
                     <h2>Bookings</h2>
                 </div>
             </div>
+
+            <!-- Reservation table --> 
             <div class="row">
                 <div class="col-md-12">
-                    <h4>Customer table</h4>
-                    <input type="text" id="searchCustomer" onkeyup="searchCustomer()" placeholder="Search for lastname">
+                    <h3>Reservation table</h3>
+                    <input type="text" class="searchField" id="searchReservation" onkeyup="searchReservation()" placeholder="Search for lastname">
                     <script>
-                        function searchCustomer() {
+                        function searchReservation() {
                         let input, filter, table, tr, td, i, txtValue;
-                        input = document.getElementById("searchCustomer");
+                        input = document.getElementById("searchReservation");
                         filter = input.value.toLowerCase();
                         table = document.getElementById("reservation-table");
                         tr = table.getElementsByTagName("tr");
@@ -66,7 +68,68 @@
                     </script>
                     <div class="tableFixHead">
                         <table id="reservation-table" class="big-table">
-                        
+                            <tr>
+                                <th>ID</th>
+                                <th>fname</th>
+                                <th>lname</th>
+                                <th>arrive date</th>
+                                <th>departure date</th>
+                                <th>adults</th>
+                                <th>child</th>
+                                <th>extrra services</th>
+                                <th>room type</th>
+                                <th>total price</th>
+                                <th>reservation date</th>
+                            </tr>
+                            <?php
+                                include 'retrieveReservation.php';
+                                foreach ($reservationArray as $row) {
+                                    echo '<tr>';
+                                    foreach($row as $cell) {
+                                        echo '<td>'. $cell. '</td>';
+                                    }
+                                    echo '</tr>';
+                                }
+                                
+                            echo "</table>";
+                                // If there is no reservations
+                                if($isReservation == false) {
+                                    echo "There is no reservations";
+                                }
+                            ?>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer table -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Customer table</h4>
+                    <input type="text" class="searchField" id="searchCustomer" onkeyup="searchCustomer()" placeholder="Search for lastname">
+                    <script>
+                        function searchCustomer() {
+                        let input, filter, table, tr, td, i, txtValue;
+                        input = document.getElementById("searchCustomer");
+                        filter = input.value.toLowerCase();
+                        table = document.getElementById("customer-table");
+                        tr = table.getElementsByTagName("tr");
+
+                        // Loop through all table rows, and hide those that don't match the search
+                        for (i = 0; i < tr.length; i++) {
+                            td = tr[i].getElementsByTagName("td")[2]; // index [2] means lastname
+                            if (td) {
+                            txtValue = td.textContent || td.innerText;
+                            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                            } else {
+                                tr[i].style.display = "none";
+                            }
+                            }
+                        }
+                        }
+                    </script>
+                    <div class="tableFixHead">
+                        <table id="customer-table" class="big-table">
                             <tr>
                                 <th>ID</th>
                                 <th>fname</th>
@@ -78,7 +141,7 @@
                                 <th>created_at</th>
                             </tr>
                             <?php
-                                include '../retrieveCustomers.php';
+                                include 'retrieveCustomers.php';
                                 foreach ($customerArray as $row) {
                                     echo '<tr>';
                                     foreach($row as $cell) {
@@ -119,7 +182,7 @@
                         </tr>';
                     ?>
                    </table>
-                   <input type="text" id="searchEmail" onkeyup="searchEmail()" placeholder="Search for email">
+                   <input type="text" class="searchField" id="searchEmail" onkeyup="searchEmail()" placeholder="Search for email">
                    <script>
                         // function to search emails from table
                         function searchEmail() {
@@ -147,7 +210,7 @@
                     <hr>
                     <form onsubmit="confirmUnsub()"  action="remove-subscription.php" method="POST">
                         <h6 id="removeEmailh6">Remove email from subscriber list</h6>
-                        <input type="email" id="deleteEmail" name="email"  placeholder="Remove email" required>
+                        <input type="email" class="searchField" id="deleteEmail" name="email"  placeholder="Remove email" required>
                         <br><label id="lblUnsub"><input type="checkbox" id="checkUnsub" name="checkbox">Confirm removing email</label>
                         <br><input type="submit" class="btn btn-primary" id="submitUnsubscribe" value="Unsubscribe">
                     </form>

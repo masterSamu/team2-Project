@@ -7,52 +7,75 @@
   $customCssCode = '<link href="contactform.css" rel="stylesheet">';
   include 'header.php';
 ?>
-
+<head>
+    <link href="reservation-style.css" type="text/css" rel="stylesheet" href="css/datepicker.css">
+    <link href="reservation-style.css" type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+</head>
 <!-- Page Content-->
+<body>  
 
+<?php
+// define variables and set to empty values
+$nameErr = $emailErr = $telErr = "";
+$name = $email = $comment = $tel = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+  }
+    
+  if (empty($_POST["tel"])) {
+    $telErr = "Phone number is required";
+  } else {
+    $website = test_input($_POST["tel"]);
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 <main>
-	<div class="row">
-          <div class="col-md-12">
-            <h1>Contact Form</h1>
-          </div>
+<div class="row">
+	<div class="col-md-12">
+            <center><h1>Contact Us</h1></center>
+	</div>
+</div>
+<div class="container">
+	<form method="post" action="contact-Info.php">
+        <div class="col-md">
+  	        <label for="name">Name:</label> <input type="text" id="name" required></p>
         </div>
-
-<!-- Contact information form for room reservation -->
-	<div class="container">
-	<form  id="res-page-cus-info-table" method="POST" action="save-customer-info.php">
-        <fieldset>
-            <legend align="center">Customer information</legend>
-            <table>
-                <tr>
-                    <td><label for="fname">First name:</label></td>
-                    <td><input type="text" id="fname" name="fname" required></td>
-                </tr>
-                <tr>
-                    <td><label for="lname">Last name:</label></td>
-                    <td><input type="text" id="lname" name="lname" required></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email:</label></td>
-                    <td><input type="email" if="email" name="email" required></td>
-                </tr>
-                <tr>
-                    <td><label for="tel">Phone number:</label></td>
-                    <td><input type="tel" id="tel" name="tel" required></td>
-                </tr>
-                <tr>
-                    <td><label for="bdate">Birth date:</label></td>
-                    <td><input type="date" id="bdate" name="bdate" value="" min="1900-01-01" max="2021-01-01" required></td>
-                </tr>
-		<!-- <tr>
-                    <td><label for="mes">Messages:</label></td>
-                    <td><input type="text" id="mes" name="mes"></td>
-                </tr> --!>
-	    </table>
-            <input type="submit" class="btn btn-primary" value="Submit">
-        </fieldset>
-    </form>
+        <div class="col-md">
+  	        <label for="email">Email:</label> <input type="text" id="email" required></p>
         </div>
-        </main>
-
+        <div class="col-md">
+  	        <label for="tele">Phone number:</label> <input type="tel" id="tele" required></p>
+        </div>
+        <div class="col-md">
+            <label for="">Messages:</label> <textarea id="mes" required></textarea>
+        </p>
+        </div>
+        <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+	</form>
+</div>
+</main>
 <!-- Include footer from footer.php file -->
 <?php include 'Footer.php'; ?>
