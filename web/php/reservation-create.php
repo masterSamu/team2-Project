@@ -33,6 +33,7 @@ if($conn->query($sqlcustomers) === TRUE && $conn->query($sqlreservation) === TRU
 
     echo "New records added";
     session_destroy();
+    header('Location: home.php');
 }
 else
 {
