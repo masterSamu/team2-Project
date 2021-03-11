@@ -1,7 +1,7 @@
 <?php
     include '../database.php';
 
-    $email = $_POST['email'];
+    $email = strtolower($_POST['email']);
     $sql = "DELETE FROM subscriptions WHERE email='$email'";
     $query = mysqli_query($conn, $sql);
     if ($query) {
