@@ -5,7 +5,17 @@
 	display: flex;
 	justify-content: center;
 	}
-
+.form{
+	background-color: rgb(255,255,245);
+	padding: 10px;
+	border: 1px solid;
+	box-shadow: 15px 15px 7px grey;
+	margin: 30px;	
+	line-height: 200%;
+	}
+.row2{
+	padding-left: 100px;
+	}
 label{
 	display:block-inline;
 	font-weight:bold;
